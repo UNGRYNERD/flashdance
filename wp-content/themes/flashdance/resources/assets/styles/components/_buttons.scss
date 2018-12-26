@@ -1,0 +1,19 @@
+.button {
+  font-size: 16px;
+  font-weight: 800;
+  padding: 20px 46px;
+  text-transform: uppercase;
+  transition: $transition;
+
+  &__pink {
+    color: #fff;
+    border: 4px solid $primary;
+    background-color: $primary;
+    display: inline-block;
+
+    &:hover {
+      background-color: $secondary;
+      color: $primary;
+    }
+  }
+}

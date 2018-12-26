@@ -1,10 +1,15 @@
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
 
-$theme-colors: (
-  primary: #525ddc
-);
+/** Colors */
+$primary: #e523bb;
+$secondary: #f8e71c;
+$black: #000;
+$grey: #ddd;
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
+
+/** Transicion */
+$transition: 0.6s ease all;

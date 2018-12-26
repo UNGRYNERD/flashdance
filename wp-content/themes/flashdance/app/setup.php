@@ -11,7 +11,7 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
+    //wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
@@ -140,7 +140,9 @@ function jk_assets() {
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\jk_assets', 100);
 
-// ENABLE SVG UPLOAD
+/**
+ * Enable SVG Upload
+ */
 function custom_upload_mimes( $existing_mimes = array() ) {
 	$existing_mimes['svg'] = 'image/svg+xml';
 	return $existing_mimes;
