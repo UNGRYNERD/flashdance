@@ -7,7 +7,7 @@
 @section('content')
   @while(have_posts()) @php the_post() @endphp
     <section class="box-header" style="background-image: url('@asset('images/bg_flashdance_header.jpg')');">
-      <div class="containter">
+      <div class="container">
         <div class="row">
           <div class="col-12 text-center">
               @if ( the_custom_logo() != 0 )

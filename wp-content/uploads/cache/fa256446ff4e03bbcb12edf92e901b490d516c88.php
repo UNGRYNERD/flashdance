@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
     <section class="box-header" style="background-image: url('<?= App\asset_path('images/bg_flashdance_header.jpg'); ?>');">
-      <div class="containter">
+      <div class="container">
         <div class="row">
           <div class="col-12 text-center">
               <?php if( the_custom_logo() != 0 ): ?>
