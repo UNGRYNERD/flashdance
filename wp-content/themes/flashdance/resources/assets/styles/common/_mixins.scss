@@ -1,0 +1,11 @@
+@mixin placeholder($selector, $color) {
+  #{$selector}::-webkit-input-placeholder {color: $color}
+  #{$selector}::-moz-placeholder          {color: $color}
+  #{$selector}:-ms-input-placeholder      {color: $color}
+}
+/*@include placeholder('input', #fff);*/
+
+@mixin clip-path ($value) {
+  -webkit-clip-path: $value;
+  clip-path: $value;
+}

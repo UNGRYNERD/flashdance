@@ -6,6 +6,9 @@
     ],
     "customizer": [
       "./scripts/customizer.js"
+    ],
+    "jkscript": [
+      "./scripts/jkscript.js"
     ]
   },
   "publicPath": "/wp-content/themes/flashdance",

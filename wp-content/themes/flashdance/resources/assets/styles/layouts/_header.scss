@@ -1,7 +1,141 @@
-.banner .nav li {
-  @extend .nav-item;
-}
+//.banner .nav li {
+//  @extend .nav-item;
+//}
+//
+//.banner .nav a {
+//  @extend .nav-link;
+//}
 
-.banner .nav a {
-  @extend .nav-link;
+header {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 40px 0;
+  
+  .navbar-toggler {
+    width: 40px;
+    height: 26px;
+    position: relative;
+    display: block;
+    z-index: 10;
+
+    &:focus, &:active, &:active:focus {
+      outline: 0;
+    }
+
+    span{
+      width: 40px;
+      height: 2px;
+      left: 0;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+
+      &:nth-child(2){
+        top: 11px;
+      }
+
+      &:nth-child(3){
+        top: 22px;
+      }
+    }
+  }
+  
+  #navbarContent {
+    z-index: 20;
+    display: block;
+    position: fixed;
+    width: 560px;
+    height: 100%;
+    padding: 56px 100px;
+    background-color: $primary;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: $transition;
+    transform: translateX(-100%);
+
+    &.open{
+      transform: translateX(0%);
+    }
+    
+    .navbar-toggler {
+      width: 40px;
+      height: 26px;
+      margin-bottom: 40px;
+
+      span{
+        background-color: $secondary;
+        transform: rotate(45deg);
+        transform-origin: left center;
+
+        &:nth-child(2){
+          display: none;
+        }
+
+        &:nth-child(3){
+          transform: rotate(-45deg);
+          top: 28px;
+        }
+      }
+    }
+    
+    .button__yellow {
+      margin-bottom: 40px;
+    }
+    
+    .box-social {
+      .social-icon {
+        color: $secondary;
+        margin-left: 0;
+        margin-right: 24px;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    
+    /* Elementos menu */
+    .navbar-nav {
+      margin-bottom: 30px;
+      
+      .nav-item {
+        .nav-link {
+          color: $secondary;
+          text-transform: uppercase;
+          font-weight: 700;
+          padding: 10px 0;
+          position: relative;
+          
+          &:after{
+            display: block;
+            height: 2px;
+            width: 0;
+            content: "";
+            background-color: $secondary;
+            transition: $transition;
+          }
+          
+          &:hover {
+            &:after {
+              width: 24px;
+            }
+          }
+        }
+        
+        &.active {
+          .nav-link {
+            &:after {
+              width: 24px;
+            }
+          }
+        }
+        
+      }
+    }
+  }
+
 }

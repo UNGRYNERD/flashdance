@@ -11,7 +11,7 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    //wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
+    //wp_enqueue_style('sage/main.css', asset_path('styles/main.scss'), false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
@@ -136,7 +136,9 @@ add_action('after_setup_theme', function () {
  * Jk assets
  */
 function jk_assets() {
-  wp_enqueue_style('google_fonts', '//fonts.googleapis.com/css?family=Barlow:400,700', false, null );
+  wp_enqueue_style('google_fonts', '//fonts.googleapis.com/css?family=Barlow:300,400,700', false, null );
+  wp_enqueue_style('fa_fonts', '//use.fontawesome.com/releases/v5.6.3/css/all.css', false, null );
+  wp_enqueue_script('jk_scripts.js', asset_path('scripts/jkscript.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\jk_assets', 100);
 

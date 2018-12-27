@@ -14,6 +14,9 @@
                 {{ the_custom_logo() }}
               @endif
           </div>
+          <div class="col-12">
+            <div id="timer"></div>
+          </div>
         </div>
       </div> 
     </section>
@@ -66,5 +69,83 @@
         </div>
       </div>
     </section>
+    <section class="box-instagram">
+      <div class="container">
+        <div class="row justify-content-between align-items-baseline">
+          <div class="col-6">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="col-6 text-right">
+            <a href="#" class="link-to">
+              ver en instagram<i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-insta">
+            <?php echo do_shortcode('[insta-gallery id="1"]');?>
+          </div>
+        </div>
+      </div>
+    </section>
   @endwhile
+  
+  <section class="box-last-post">
+    <div class="container">
+      <div class="row justify-content-between align-items-baseline">
+        <div class="col-6">
+          <h2 class="title__primary">última hora</h2>
+        </div>
+        <div class="col-6 text-right">
+          <a href="#" class="link-to">
+            ir a noticias<i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <article class="col-12 col-md-4 box-article">
+          <a href="#">
+            <div class="img-post" style="background-image: url('@asset('images/foto_flashdance_espectaculo.jpg')')"></div>
+            <h3>Elenco Flashdance el musical</h3>
+            <p>El pasado 27 de noviembre de 2018 fue un día muy especial ya que pudimos conocer al elenco oficial que hará que Flashdance, una de las películas más taquilleras de los 80´s, cobre vida en los escenarios españoles en forma de musical.</p>
+          </a>
+        </article>
+        <article class="col-12 col-md-4 box-article">
+          <a href="#">
+            <div class="img-post" style="background-image: url('@asset('images/foto_flashdance_espectaculo.jpg')')"></div>
+            <h3>Elenco Flashdance el musical</h3>
+            <p>El pasado 27 de noviembre de 2018 fue un día muy especial ya que pudimos conocer al elenco oficial que hará que Flashdance, una de las películas más taquilleras de los 80´s, cobre vida en los escenarios españoles en forma de musical.</p>
+          </a>
+        </article>
+        <article class="col-12 col-md-4 box-article">
+          <a href="#">
+            <div class="img-post" style="background-image: url('@asset('images/foto_flashdance_espectaculo.jpg')')"></div>
+            <h3>Elenco Flashdance el musical</h3>
+            <p>El pasado 27 de noviembre de 2018 fue un día muy especial ya que pudimos conocer al elenco oficial que hará que Flashdance, una de las películas más taquilleras de los 80´s, cobre vida en los escenarios españoles en forma de musical.</p>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+  
 @endsection
+
+<script>
+
+  var countdown = new Countdown({
+    selector: '#timer',
+    msgBefore: 'Will start at Christmas!',
+    msgAfter: 'Happy new year folks!',
+    msgPattern:
+      '{days} days, {hours} hours and {minutes} minutes before new year!',
+    dateStart: new Date('2013/12/25 12:00'),
+    dateEnd: new Date('Jan 1, 2019 12:00'),
+    onStart: function() {
+      console.log('Merry Christmas!')
+    },
+    onEnd: function() {
+      console.log('Happy New Year!')
+    }
+  })
+
+</script>

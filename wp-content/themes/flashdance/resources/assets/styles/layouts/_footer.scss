@@ -1,0 +1,43 @@
+footer {
+  background-color: $black;
+  padding: 120px 0 40px;
+  margin-top: -60px;
+  
+  .custom-logo-link {
+    margin-bottom: 160px;
+    display: block;
+    
+    img {
+      max-width: 360px;
+    }
+  }
+  
+  .row-logos {
+    margin-bottom: 60px;
+  }
+  
+  .footer-legales {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 0;
+    
+    a {
+      @extend .footer-legales;
+      
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.social-icon {
+  font-size: 24px;
+  margin-left: 24px;
+
+  &:hover {
+    opacity: 1;
+    color: $secondary;
+    text-decoration: none;
+  }
+}

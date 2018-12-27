@@ -3,8 +3,7 @@
   height: 800px;
   background-position: top center;
   background-size: cover;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0% 100%);
+  @include clip-path(polygon(0 0, 100% 0, 100% calc(100% - 60px), 0% 100%));
 
   .custom-logo-link {
     margin-top: 190px;
@@ -14,10 +13,9 @@
 
 .box-video {
   margin-top: -61px;
-  padding: 140px;
+  padding: 140px 0;
   background-color: $black;
-  -webkit-clip-path: polygon(0 60px, 100% 0, 100% calc(100% - 60px), 0% 100%);
-  clip-path: polygon(0 60px, 100% 0, 100% calc(100% - 60px), 0% 100%);
+  @include clip-path(polygon(0 60px, 100% 0, 100% calc(100% - 60px), 0% 100%));
 
   h2 {
     color: #fff;
@@ -31,12 +29,12 @@
 .box-text-img {
   margin: 80px 0;
 
-  h2 {
-    color: $primary;
-  }
-
   .content {
     margin-right: 30px;
+  }
+  
+  .img__clip {
+    margin-top: 80px;
   }
 
   &.box-separator {
@@ -57,13 +55,96 @@
   }
 }
 
-.box-text-img:nth-child(odd) {
+.box-text-img:nth-child(even) {
   .row {
     flex-direction: row-reverse;
 
     .content {
       margin-left: 30px;
       margin-right: 0;
+    }
+  }
+}
+
+.box-instagram {
+  background-color: $secondary;
+  padding: 140px 0;
+  @include clip-path(polygon(0 60px, 100% 0, 100% 100%, 0% calc(100% - 60px)));
+  
+  .col-insta {
+    padding: 0 5px;
+    margin-top: 30px;
+    min-height: 565px;
+  }
+  
+  i {
+    color: $primary;
+    font-size: 40px;
+  }
+}
+
+.link-to {
+  font-weight: 700;
+  
+  .fa-chevron-right {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+}
+
+.box-last-post {
+  padding: 80px 0;
+}
+
+.box-newsletter {
+  @extend .box-instagram;
+  background-color: $primary;
+  padding: 120px 0;
+  
+  .title__primary {
+    color: $secondary;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #fff;
+  }
+  
+  .mc4wp-form-fields {    
+    input[type="email"] {
+      border: 2px solid #fff;
+      padding: 24px;
+      font-size: 24px;
+      font-weight: 300;
+      color: $primary;
+      width: 100%;
+      margin-right: 30px;
+      transition: $transition;
+      
+      &:active, &:focus, &:active:focus {
+        border-color: $secondary;
+        outline: none;
+      }
+    }
+    
+    @include placeholder('input', $primary);
+    
+    input[type="submit"] {
+      border: 2px solid $secondary;
+      padding: 26px 55px;
+      background-color: $secondary;
+      font-weight: 700;
+      text-transform: uppercase;
+      max-width: 165px;
+      width: 100%;
+      color: $primary;
+      cursor: pointer;
+      transition: $transition;
+      
+      &:hover {
+        background-color: $primary;
+        color: $secondary;
+      }
     }
   }
 }
