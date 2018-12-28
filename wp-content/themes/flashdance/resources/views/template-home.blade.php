@@ -126,26 +126,5 @@
         </article>
       </div>
     </div>
-  </section>
-  
+  </section>  
 @endsection
-
-<script>
-
-  var countdown = new Countdown({
-    selector: '#timer',
-    msgBefore: 'Will start at Christmas!',
-    msgAfter: 'Happy new year folks!',
-    msgPattern:
-      '{days} days, {hours} hours and {minutes} minutes before new year!',
-    dateStart: new Date('2013/12/25 12:00'),
-    dateEnd: new Date('Jan 1, 2019 12:00'),
-    onStart: function() {
-      console.log('Merry Christmas!')
-    },
-    onEnd: function() {
-      console.log('Happy New Year!')
-    }
-  })
-
-</script>
