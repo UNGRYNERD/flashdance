@@ -9,6 +9,9 @@
     ],
     "jkscript": [
       "./scripts/jkscript.js"
+    ],
+    "countdown": [
+      "./scripts/countdown.js"
     ]
   },
   "publicPath": "/wp-content/themes/flashdance",

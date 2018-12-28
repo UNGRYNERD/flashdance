@@ -10,6 +10,26 @@
   .custom-logo-link {
     margin-top: 190px;
     display: block;
+    margin-bottom: 80px;
+  }
+  
+  .row-countdown {
+    text-align: center;
+    
+    span{
+      display: block;
+      font-weight: 700;
+      color: $primary;
+      font-size: 80px;
+      line-height: 80px;
+      margin-bottom: 8px;
+    }
+    
+    p {
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 18px;
+    }
   }
 }
 
