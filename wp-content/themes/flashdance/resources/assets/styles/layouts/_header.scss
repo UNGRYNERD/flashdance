@@ -42,7 +42,7 @@ header {
     width: 460px;
     height: 100%;
     padding: 56px 100px;
-    background-color: $primary;
+    background-color: $third;
     left: 0;
     top: 0;
     bottom: 0;
@@ -59,7 +59,7 @@ header {
       margin-bottom: 40px;
 
       span{
-        background-color: $secondary;
+        background-color: $primary;
         transform: rotate(45deg);
         transform-origin: left center;
 
@@ -74,18 +74,23 @@ header {
       }
     }
     
-    .button__yellow {
+    .button {
       margin-bottom: 40px;
+      color: $third;
+      
+      &:hover {
+        color: $primary;
+      }
     }
     
     .box-social {
       .social-icon {
-        color: $secondary;
+        color: #fff;
         margin-left: 0;
         margin-right: 24px;
 
         &:hover {
-          opacity: 0.8;
+          color: $primary;
         }
       }
     }
@@ -96,7 +101,7 @@ header {
       
       .nav-item {
         .nav-link {
-          color: $secondary;
+          color: #fff;
           text-transform: uppercase;
           font-weight: 700;
           padding: 10px 0;
@@ -112,17 +117,13 @@ header {
           }
           
           &:hover {
-            &:after {
-              width: 24px;
-            }
+            color: $primary;
           }
         }
         
         &.active {
           .nav-link {
-            &:after {
-              width: 24px;
-            }
+            color: $primary;
           }
         }
         

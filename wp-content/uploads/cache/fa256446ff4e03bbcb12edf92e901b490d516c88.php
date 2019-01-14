@@ -36,7 +36,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-10 text-center">
-            <h2 class="title__primary">making of flashdance</h2>
+            <h2 class="title__primary no__line">making of flashdance</h2>
             <img class="video-content" src="<?= App\asset_path('images/video_vimeo.jpg'); ?>" alt="">
             <a href="#" class="button button__pink">Reserva tus entradas</a>
           </div>
@@ -81,6 +81,52 @@
         </div>
       </div>
     </section>
+    
+    <section class="box-testimonials">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+                
+              <div id="carouseltestimonials" class="carousel slide carousel-fade" data-ride="carousel">
+               
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-10 col-carousel">
+                    <img class="carousel-icon" src="<?= App\asset_path('images/icons/bloquoute-icon.svg'); ?>" alt="blockquote icon">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <div class="content">
+                          <p>“La Familia Addams está llena de encanto, humor inteligente y sorpresas que explican por qué es un ÉXITO en su tour internacional.”</p>
+                          <div class="author">
+                            <p>BARBARA WALTERS <span>The View</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="content">
+                          <p>“La Familia Addams está llena de encanto, humor inteligente y sorpresas que explican por qué es un ÉXITO en su tour internacional. La Familia Addams está llena de encanto, humor inteligente y sorpresas que explican por qué es un ÉXITO en su tour internacional.”</p>
+                          <div class="author">
+                            <p>BARBARA WALTERS <span>The View</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <a class="carousel-control carousel-control-prev" href="#carouseltestimonials" role="button" data-slide="prev">
+                  <img src="<?= App\asset_path('images/icons/arrow-left.svg'); ?>;" alt="arrow slider left">
+                </a>
+                <a class="carousel-control carousel-control-next" href="#carouseltestimonials" role="button" data-slide="next">
+                  <img src="<?= App\asset_path('images/icons/arrow-right.svg'); ?>;" alt="arrow slider right">
+                </a>
+              </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <section class="box-instagram">
       <div class="container">
         <div class="row justify-content-between align-items-baseline">

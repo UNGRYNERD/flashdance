@@ -11,12 +11,25 @@ body {
 }
 
 .title__primary {
-  color: $primary;
+  color: $black;
   font-size: 32px;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 40px;
   margin-bottom: 40px;
+  
+  &:before {
+    content: "/";
+    position: relative;
+    margin-right: 10px;
+    color: $primary;
+  }
+  
+  &.no__line {
+    &:before {
+      display: none;
+    }
+  }
 }
 
 img {

@@ -1,9 +1,9 @@
 .button {
   font-size: 16px;
   font-weight: 800;
-  padding: 22px 48px;
+  padding: 19px 44px;
   text-transform: uppercase;
-  border: 2px solid transparent;
+  border: 5px solid transparent;
   display: inline-block;
 
   &__pink {
@@ -11,20 +11,20 @@
     background-color: $primary;
 
     &:hover {
-      background-color: $secondary;
+      background-color: transparent;
       color: $primary;
       text-decoration: none;
+      border-color: $primary;
     }
   }
   
-  &__yellow {
-    color: $primary;
-    background-color: $secondary;
+  &__blue {
+    color: #fff;
+    background-color: $third;
 
     &:hover {
-      border-color: $secondary;
-      background-color: $primary;
-      color: $secondary;
+      background-color: $secondary;
+      color: $primary;
       text-decoration: none;
     }
   }

@@ -19,7 +19,7 @@
 
             <?php endif; ?>
             
-            <a href="#" class="button button__yellow">comprar entradas</a>
+            <a href="#" class="button button__pink">comprar entradas</a>
             
             <div class="box-social">
               <a href="" class="social-icon">

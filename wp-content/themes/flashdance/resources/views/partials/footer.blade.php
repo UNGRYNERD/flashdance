@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-4">
-        <h2 class="title__primary">
+        <h2 class="title__primary no__line">
           no te pierdas nada
         </h2>
         <p>Suscríbete para estar al día de todas las novedades de nuestro musical.</p>
@@ -34,7 +34,7 @@
         </a>
       </div>
     </div>
-    <div class="row justify-content-between row-logos">
+    <div class="row justify-content-between row-logos d-none">
       <div class="col-auto">
         <img src="@asset('images/logo/logo_sellador.png');" alt="">
       </div>

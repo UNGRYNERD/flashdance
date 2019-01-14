@@ -18,7 +18,7 @@
               {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']) !!}
             @endif
             
-            <a href="#" class="button button__yellow">comprar entradas</a>
+            <a href="#" class="button button__pink">comprar entradas</a>
             
             <div class="box-social">
               <a href="" class="social-icon">
