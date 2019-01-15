@@ -13,6 +13,9 @@
           @include('partials.sidebar')
         </aside>
       @endif
+      @if(is_front_page() || is_singular('post'))
+        @include('partials/last-post')
+      @endif
     </main>
     
     @php do_action('get_footer') @endphp

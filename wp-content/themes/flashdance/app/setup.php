@@ -136,7 +136,7 @@ add_action('after_setup_theme', function () {
  * Jk assets
  */
 function jk_assets() {
-  wp_enqueue_style('google_fonts', '//fonts.googleapis.com/css?family=Barlow:300,400,700', false, null );
+  wp_enqueue_style('google_fonts', '//fonts.googleapis.com/css?family=Barlow:300,400,600,700', false, null );
   wp_enqueue_style('fa_fonts', '//use.fontawesome.com/releases/v5.6.3/css/all.css', false, null );
   wp_enqueue_script('countdown.js', asset_path('scripts/countdown.js'), ['jquery'], null, true);
   wp_enqueue_script('jk_scripts.js', asset_path('scripts/jkscript.js'), ['jquery'], null, true);

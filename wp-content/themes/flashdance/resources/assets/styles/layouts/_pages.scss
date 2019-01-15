@@ -1,38 +1,4 @@
 //HOME
-.box-header {
-  height: 800px;
-  background-position: center;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-color: $black;
-  @include clip-path(polygon(0 0, 100% 0, 100% calc(100% - 60px), 0% 100%));
-
-  .custom-logo-link {
-    margin-top: 190px;
-    display: block;
-    margin-bottom: 80px;
-  }
-  
-  .row-countdown {
-    text-align: center;
-    
-    span{
-      display: block;
-      font-weight: 700;
-      color: $primary;
-      font-size: 80px;
-      line-height: 80px;
-      margin-bottom: 8px;
-    }
-    
-    p {
-      text-transform: uppercase;
-      color: #fff;
-      font-size: 18px;
-    }
-  }
-}
-
 .box-video {
   margin-top: -61px;
   padding: 140px 0;
@@ -42,9 +8,21 @@
   h2 {
     color: #fff;
   }
-
-  .video-content {
+  
+  .box-iframe {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
     margin-bottom: 80px;
+    
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
   }
   
   .button {
@@ -176,6 +154,8 @@
 
 .box-last-post {
   padding: 80px 0;
+  background-color: #fff;
+  @include clip-path(polygon(0 0, 100% 60px, 100% calc(100% - 60px), 0% 100%));
 }
 
 .box-newsletter {

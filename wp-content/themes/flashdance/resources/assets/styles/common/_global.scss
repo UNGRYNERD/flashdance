@@ -10,13 +10,25 @@ body {
   }
 }
 
-.title__primary {
+h1, h2, h3, h4, h5, h6 {
   color: $black;
-  font-size: 32px;
   font-weight: 700;
-  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+h2 {
+  font-size: 32px;
   line-height: 40px;
+}
+
+.title__primary {
   margin-bottom: 40px;
+  text-transform: uppercase;
   
   &:before {
     content: "/";

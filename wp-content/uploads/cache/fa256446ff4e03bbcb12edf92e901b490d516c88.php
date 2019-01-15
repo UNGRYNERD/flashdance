@@ -1,43 +1,14 @@
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
-    <section class="box-header" style="background-image: url('<?= App\asset_path('images/bg_flashdance_header.jpg'); ?>');">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 text-center">
-              <?php if( the_custom_logo() != 0 ): ?>
-                <?php echo e(the_custom_logo()); ?>
-
-              <?php endif; ?>
-          </div>
-          <div class="col-12 col-md-10">
-            <div class="row justify-content-center row-countdown" countdown data-date="Mar 01 2019 21:30:00">
-              <div class="col-md-2">
-                <span data-days>0</span>
-                <p>dias</p>
-              </div>
-              <div class="col-md-2">
-                <span data-hours>0</span>
-                <p>horas</p>
-              </div>
-              <div class="col-md-2">
-                <span data-minutes>0</span>
-                <p>minutos</p>
-              </div>
-              <div class="col-md-2">
-                <span data-seconds>0</span>
-                <p>segundos</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> 
-    </section>
+   
     <section class="box-video">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-md-10 text-center">
             <h2 class="title__primary no__line">making of flashdance</h2>
-            <img class="video-content" src="<?= App\asset_path('images/video_vimeo.jpg'); ?>" alt="">
+            <div class="box-iframe">
+              <iframe class="responsive-iframe" src="https://www.youtube.com/embed/Ybnh2kvPnGw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             <a href="#" class="button button__pink">Reserva tus entradas</a>
           </div>
         </div>
@@ -91,7 +62,7 @@
                
                 <div class="row justify-content-center">
                   <div class="col-12 col-md-10 col-carousel">
-                    <img class="carousel-icon" src="<?= App\asset_path('images/icons/bloquoute-icon.svg'); ?>" alt="blockquote icon">
+                    <img class="carousel-icon" src="<?= App\asset_path('images/icons/blockquoute-icon.svg'); ?>" alt="blockquote icon">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         <div class="content">
@@ -145,46 +116,8 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> 
   <?php endwhile; ?>
-  
-  <section class="box-last-post">
-    <div class="container">
-      <div class="row justify-content-between align-items-baseline">
-        <div class="col-6">
-          <h2 class="title__primary">última hora</h2>
-        </div>
-        <div class="col-6 text-right">
-          <a href="#" class="link-to">
-            ir a noticias<i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="row">
-        <article class="col-12 col-md-4 box-article">
-          <a href="#">
-            <div class="img-post" style="background-image: url('<?= App\asset_path('images/foto_flashdance_espectaculo.jpg'); ?>')"></div>
-            <h3>Elenco Flashdance el musical</h3>
-            <p>El pasado 27 de noviembre de 2018 fue un día muy especial ya que pudimos conocer al elenco oficial que hará que Flashdance, una de las películas más taquilleras de los 80´s, cobre vida en los escenarios españoles en forma de musical.</p>
-          </a>
-        </article>
-        <article class="col-12 col-md-4 box-article">
-          <a href="#">
-            <div class="img-post" style="background-image: url('<?= App\asset_path('images/foto_flashdance_espectaculo.jpg'); ?>')"></div>
-            <h3>Elenco Flashdance el musical</h3>
-            <p>El pasado 27 de noviembre de 2018 fue un día muy especial ya que pudimos conocer al elenco oficial que hará que Flashdance, una de las películas más taquilleras de los 80´s, cobre vida en los escenarios españoles en forma de musical.</p>
-          </a>
-        </article>
-        <article class="col-12 col-md-4 box-article">
-          <a href="#">
-            <div class="img-post" style="background-image: url('<?= App\asset_path('images/foto_flashdance_espectaculo.jpg'); ?>')"></div>
-            <h3>Elenco Flashdance el musical</h3>
-            <p>El pasado 27 de noviembre de 2018 fue un día muy especial ya que pudimos conocer al elenco oficial que hará que Flashdance, una de las películas más taquilleras de los 80´s, cobre vida en los escenarios españoles en forma de musical.</p>
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>  
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
