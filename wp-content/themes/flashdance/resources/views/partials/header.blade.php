@@ -8,30 +8,7 @@
             <span></span>
             <span></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarContent">
-           <button class="navbar-toggler">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            @if (has_nav_menu('primary_navigation'))
-              {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']) !!}
-            @endif
-            
-            <a href="#" class="button button__pink">comprar entradas</a>
-            
-            <div class="box-social">
-              <a href="" class="social-icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
-          </div>
+
         </nav>
       </div>
       @if(!is_front_page())
@@ -83,4 +60,27 @@
 
 </header>
 
+<div class="collapse navbar-collapse" id="navbarContent">
+  <button class="navbar-toggler">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  @if (has_nav_menu('primary_navigation'))
+    {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']) !!}
+  @endif
 
+  <a href="#" class="button button__pink">comprar entradas</a>
+
+  <div class="box-social">
+    <a href="" class="social-icon">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="" class="social-icon">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="" class="social-icon">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </div>
+</div>

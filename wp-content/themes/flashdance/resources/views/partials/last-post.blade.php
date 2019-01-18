@@ -2,18 +2,18 @@
   <div class="container">
     <div class="row justify-content-between align-items-baseline">
       <div class="col-6">
-        <h2 class="title__primary">última hora</h2>
+        <h2 class="title__primary">{{ __('última hora', 'sage') }}</h2>
       </div>
       <div class="col-6 text-right">
-        <a href="#" class="link-to">
-          ir a noticias<i class="fas fa-chevron-right"></i>
+        <a href="{{get_permalink(get_option('page_for_posts')) }}" class="link-to">
+          {{ __('ir a noticias', 'sage') }}<i class="fas fa-chevron-right"></i>
         </a>
       </div>
     </div>
     <div class="row">
      @php $args = array (
        'post_type' => 'post',
-       'post_per_page' => 3,
+       'posts_per_page' => '3',
        );
      
      query_posts($args); @endphp

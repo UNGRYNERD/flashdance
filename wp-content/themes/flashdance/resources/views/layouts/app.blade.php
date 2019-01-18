@@ -14,7 +14,7 @@
         </aside>
       @endif
       @if(is_front_page() || is_singular('post'))
-        @include('partials/last-post')
+        @include('partials.last-post')
       @endif
     </main>
     

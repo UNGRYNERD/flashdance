@@ -1,14 +1,8 @@
 <?php $__env->startSection('content'); ?>
+  <?php if(is_singular('post')): ?>
+    <?php echo $__env->make('partials.header-blog', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  <?php endif; ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
-  <section class="post-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1 class="title__primary">BLOG</h1>
-        </div>
-      </div>
-    </div>
-  </section>
     
     <section class="post-content">
       <div class="container">

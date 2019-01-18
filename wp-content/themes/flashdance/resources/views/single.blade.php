@@ -1,16 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+  @if(is_singular('post'))
+    @include('partials.header-blog')
+  @endif
   @while(have_posts()) @php the_post() @endphp
-  <section class="post-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1 class="title__primary">BLOG</h1>
-        </div>
-      </div>
-    </div>
-  </section>
     
     <section class="post-content">
       <div class="container">

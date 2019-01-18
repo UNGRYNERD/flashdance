@@ -6,5 +6,14 @@ $(document).ready(function(){
     $(this).toggleClass('open');
     $('#navbarContent').toggleClass('open');
   });
-  
+
+  if ($('.grid').length > 0) {
+    setTimeout(function(){
+      $('.grid').isotope({
+        itemSelector : '.grid-item',
+        isFitWidth: true,
+      });
+    }, 800)
+  }
+
 })

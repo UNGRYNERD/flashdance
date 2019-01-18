@@ -12,6 +12,9 @@
     ],
     "countdown": [
       "./scripts/countdown.js"
+    ],
+    "isotope": [
+      "./scripts/isotope.js"
     ]
   },
   "publicPath": "/wp-content/themes/flashdance",

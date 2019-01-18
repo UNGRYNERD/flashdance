@@ -7,6 +7,10 @@
       margin-bottom: 16px;
       position: relative;
       
+      &.no-img{
+        background-color: $primary;
+      }
+      
       &:after {
         background-color: $primary;
         opacity: 0;
@@ -33,9 +37,7 @@
       color: $black;
       line-height: 24px;
     }
-  
 
-    
     &:hover {
       text-decoration: none;
       
@@ -57,14 +59,13 @@
 .single-post {
   background-color: $bg-post;
   
-  .post-header {
-    margin-top: -60px;
-    padding: 120px 0 90px;
-    background-color: #fff;
-    @include clip-path(polygon(0 0, 100% 60px, 100% calc(100% - 60px), 0% 100%));
-    
-    .title__primary {
-      margin: 0;
+  .blog-header{
+    .post-link {
+      display: inline-block;
+      
+      &:nth-child(2){
+        margin-left: 16px;  
+      }
     }
   }
   
@@ -80,6 +81,10 @@
     
     .post_thumbnail {
       @include clip-path(polygon(0 0, 100% 0, 100% calc(100% - 30px), 0% 100%));
+      
+      img {
+        width: 100%;
+      }
     }
   }
   

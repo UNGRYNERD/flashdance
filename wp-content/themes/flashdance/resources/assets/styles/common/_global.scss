@@ -50,8 +50,7 @@ img {
 }
 
 .img__clip {
-  -webkit-clip-path: polygon(0 0, 100% 30px, 100% calc(100% - 30px), 0% 100%);
-  clip-path: polygon(0 0, 100% 30px, 100% calc(100% - 30px), 0% 100%);
+  @include clip-path(polygon(0 0, 100% 30px, 100% calc(100% - 30px), 0% 100%));
 }
 
 a {

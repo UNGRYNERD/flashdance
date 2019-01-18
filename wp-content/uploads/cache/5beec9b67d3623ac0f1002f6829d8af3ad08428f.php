@@ -14,7 +14,7 @@
         </aside>
       <?php endif; ?>
       <?php if(is_front_page() || is_singular('post')): ?>
-        <?php echo $__env->make('partials/last-post', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->make('partials.last-post', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
       <?php endif; ?>
     </main>
     

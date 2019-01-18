@@ -2,6 +2,7 @@ footer {
   background-color: $black;
   padding: 120px 0 40px;
   margin-top: -60px;
+  @include clip-path(polygon(0 0, 100% 60px, 100% 100%, 0% 100%));
   
   .custom-logo-link {
     margin-bottom: 160px;

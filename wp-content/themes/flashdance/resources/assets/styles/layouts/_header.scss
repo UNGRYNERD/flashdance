@@ -1,4 +1,4 @@
-.header-banner  {
+.header-banner {
   z-index: 10;
   padding: 64px 0;
   height: 244px;
@@ -21,129 +21,129 @@
   .navbar {
     padding: 0;
   }
-  
-  .navbar-toggler {
-    width: 40px;
-    height: 26px;
-    position: relative;
-    display: block;
-    z-index: 10;
+}
 
-    &:focus, &:active, &:active:focus {
-      outline: 0;
+.navbar-toggler {
+  width: 40px;
+  height: 26px;
+  position: relative;
+  display: block;
+  z-index: 10;
+
+  &:focus, &:active, &:active:focus {
+    outline: 0;
+  }
+
+  span{
+    width: 40px;
+    height: 2px;
+    left: 0;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+
+    &:nth-child(2){
+      top: 11px;
     }
 
+    &:nth-child(3){
+      top: 22px;
+    }
+  }
+}
+
+#navbarContent {
+  z-index: 20;
+  display: block;
+  position: fixed;
+  width: 460px;
+  height: 100%;
+  padding: 56px 100px;
+  background-color: $third;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: $transition;
+  transform: translateX(-100%);
+
+  &.open{
+    transform: translateX(0%);
+  }
+
+  .navbar-toggler {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 40px;
+
     span{
-      width: 40px;
-      height: 2px;
-      left: 0;
-      background-color: #fff;
-      position: absolute;
-      top: 0;
+      background-color: $primary;
+      transform: rotate(45deg);
+      transform-origin: left center;
 
       &:nth-child(2){
-        top: 11px;
+        display: none;
       }
 
       &:nth-child(3){
-        top: 22px;
+        transform: rotate(-45deg);
+        top: 28px;
       }
     }
   }
-  
-  #navbarContent {
-    z-index: 20;
-    display: block;
-    position: fixed;
-    width: 460px;
-    height: 100%;
-    padding: 56px 100px;
-    background-color: $third;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    transition: $transition;
-    transform: translateX(-100%);
 
-    &.open{
-      transform: translateX(0%);
+  .button {
+    margin-bottom: 40px;
+    color: $third;
+
+    &:hover {
+      color: $primary;
     }
-    
-    .navbar-toggler {
-      width: 40px;
-      height: 26px;
-      margin-bottom: 40px;
+  }
 
-      span{
-        background-color: $primary;
-        transform: rotate(45deg);
-        transform-origin: left center;
+  .box-social {
+    .social-icon {
+      color: #fff;
+      margin-left: 0;
+      margin-right: 24px;
 
-        &:nth-child(2){
-          display: none;
-        }
-
-        &:nth-child(3){
-          transform: rotate(-45deg);
-          top: 28px;
-        }
-      }
-    }
-    
-    .button {
-      margin-bottom: 40px;
-      color: $third;
-      
       &:hover {
         color: $primary;
       }
     }
-    
-    .box-social {
-      .social-icon {
+  }
+
+  /* Elementos menu */
+  .navbar-nav {
+    margin-bottom: 30px;
+
+    .nav-item {
+      .nav-link {
         color: #fff;
-        margin-left: 0;
-        margin-right: 24px;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 10px 0;
+        position: relative;
+
+        &:after{
+          display: block;
+          height: 2px;
+          width: 0;
+          content: "";
+          background-color: $secondary;
+          transition: $transition;
+        }
 
         &:hover {
           color: $primary;
         }
       }
-    }
-    
-    /* Elementos menu */
-    .navbar-nav {
-      margin-bottom: 30px;
-      
-      .nav-item {
+
+      &.active {
         .nav-link {
-          color: #fff;
-          text-transform: uppercase;
-          font-weight: 700;
-          padding: 10px 0;
-          position: relative;
-          
-          &:after{
-            display: block;
-            height: 2px;
-            width: 0;
-            content: "";
-            background-color: $secondary;
-            transition: $transition;
-          }
-          
-          &:hover {
-            color: $primary;
-          }
+          color: $primary;
         }
-        
-        &.active {
-          .nav-link {
-            color: $primary;
-          }
-        }
-        
       }
+
     }
   }
 }
