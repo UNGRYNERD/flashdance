@@ -1,3 +1,4 @@
+/* eslint-disable */
 $(document).ready(function(){
 
   // MENU TOOGLE
@@ -7,6 +8,7 @@ $(document).ready(function(){
     $('#navbarContent').toggleClass('open');
   });
 
+  // ISOTOPE
   if ($('.grid').length > 0) {
     setTimeout(function(){
       $('.grid').isotope({
@@ -15,5 +17,4 @@ $(document).ready(function(){
       });
     }, 800)
   }
-
 })

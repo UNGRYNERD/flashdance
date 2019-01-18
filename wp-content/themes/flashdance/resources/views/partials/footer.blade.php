@@ -37,16 +37,16 @@
       </div>
     </div>
     <div class="row justify-content-between row-logos">
-      <div class="col-6 col-lg-4">
+      <div class="col-6 col-lg-3">
         <img src="@asset('images/logo/logo_sellador.png');" alt="">
       </div>
-      <div class="col-6 col-lg-4">
+      <div class="col-6 col-lg-3">
         <img src="@asset('images/logo/logo_marika.png');" alt="">
       </div>
-      <div class="col-6 col-lg-4">
+      <div class="col-6 col-lg-3">
         <img src="@asset('images/logo/logo_yamaha.png');" alt="">
       </div>
-      <div class="col-6 col-lg-4">
+      <div class="col-6 col-lg-3">
         <img src="@asset('images/logo/logo_pays.png');" alt="">
       </div>      
     </div>

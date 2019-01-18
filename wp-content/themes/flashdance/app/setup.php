@@ -11,7 +11,7 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('google_fonts', '//fonts.googleapis.com/css?family=Barlow:300,400,600,700', false, null );
+    wp_enqueue_style('google_fonts', '//fonts.googleapis.com/css?family=Barlow:300,400,500i,500,600,700', false, null );
     wp_enqueue_style('fa_fonts', '//use.fontawesome.com/releases/v5.6.3/css/all.css', false, null );
     wp_enqueue_script('countdown.js', asset_path('scripts/countdown.js'), ['jquery'], null, true);
     wp_enqueue_script('isotope.js', asset_path('scripts/isotope.js'), ['jquery'], null, true);

@@ -59,33 +59,8 @@
     margin-top: 80px;
     width: 100%;
   }
-
-  &.box-separator {
-    margin-bottom: 140px;
-    
-    @media (max-width: 767px) {
-      margin-bottom: 70px;
-    }
-
-    .container {
-      &::after {
-        content: "";
-        height: 1px;
-        width: 100%;
-        display: block;
-        margin: 80px 0;
-        background-color: $grey;
-        transform-origin: top left;
-        transform: skewY(3deg);
-        
-        @media (max-width: 991px){
-          transform: skewY(1.5deg);
-        }
-      }
-    }
-  }
   
-  &:nth-child(even) {
+  &:nth-child(odd) {
     .row {
       flex-direction: row-reverse;
 
@@ -99,10 +74,44 @@
       }
     }
   }
-  
 }
 
+.box-separator {
+  margin-bottom: 140px;
 
+  @media (max-width: 767px) {
+    margin-bottom: 70px;
+  }
+
+  .container {
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      display: block;
+      margin: 80px 0;
+      background-color: $grey;
+      transform-origin: top left;
+      transform: skewY(3deg);
+
+      @media (max-width: 991px){
+        transform: skewY(1.5deg);
+      }
+    }
+  }
+  
+  &__invert {
+    .container {
+      &::after {
+        transform: skewY(-3deg);
+
+        @media (max-width: 991px){
+          transform: skewY(-1.5deg);
+        }
+      }
+    }
+  }
+}
 
 .box-instagram {
   background-color: $third;
@@ -115,7 +124,7 @@
     @include clip-path(polygon(0 30px, 100% 0, 100% 100%, 0% calc(100% - 30px)));
   }
   
-  @media (max-width: 991px){
+  @media (max-width: 767px){
     margin-top: -16px;
     @include clip-path(polygon(0 15px, 100% 0, 100% 100%, 0% calc(100% - 15px)));
   }
@@ -386,4 +395,198 @@
     }
 
   }
+}
+
+// ELENCO
+.section-header {
+  margin-top: -60px;
+  padding: 120px 0 60px;
+  background-color: #fff;
+  @include clip-path(polygon(0 0, 100% 60px, 100% 100%, 0% 100%));
+  
+  @media (max-width: 991px){
+    margin-top: -30px;
+    padding: 60px 0 60px;
+    @include clip-path(polygon(0 0, 100% 30px, 100% 100%, 0% 100%));
+  }
+  
+  @media (max-width: 767px){
+    margin-top: -15px;
+    @include clip-path(polygon(0 0, 100% 15px, 100% 100%, 0% 100%));
+  }
+  
+  .content {
+    p {
+      font-size: 18px;
+      line-height: 32px;
+      
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.box-elenco {
+  background-color: #fff;
+  margin-bottom: 60px;
+  
+  .container:nth-child(2):after {
+    display: none;
+  }
+  
+  .team-elenco {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+    @include clip-path(polygon(0 10px, 100% 0, 100% calc(100% - 10px), 0% 100%));
+    
+    img {
+      width: 100%;
+    }
+    
+    &:hover {
+      .box-info {
+        opacity: 1;
+      }
+    }
+    
+    .box-info {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      background-color: rgba(15, 15, 60, 0.9);
+      transition: $transition;
+      
+      p {
+        color: $primary;
+        margin-bottom: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        span {
+          color: inherit;
+          font-style: italic;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  
+  .box-info {
+    p {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 5px;
+      color: $black;
+      transition: $transition;
+      
+      span {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 16px;
+        color: $black;
+        transition: $transition;
+
+        &:before {
+          content: "/";
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  
+  .team {
+    margin-bottom: 30px;
+    text-decoration: none;
+        
+    &:hover {
+      .box-info {
+        p, span {
+          color: $primary;
+        }
+      }
+    }
+  }
+  
+  // MODAL ELENCO
+  #modal-elenco {
+    position: fixed;
+    padding: 20% 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(15, 15, 60, 0.9);
+    visibility: hidden;
+    transition: opacity .15 linear;
+
+    &.open {
+      visibility: visible;
+      animation: fadeIn 1s;
+      transition: opacity .15 linear;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity:1 ;}
+    }
+
+    .box-info {
+      p, span {
+        color: $primary;
+      }
+      
+      span {
+        display: block;
+      }
+    }
+
+    .contenido-elenco {
+      color: #fff;
+    }
+    
+    .container:after {
+      display: none;
+    }
+    
+    .close_modal {
+      display: block;
+      height: 40px;
+      width: 40px;
+      position: relative;
+      transition: none;
+      
+      span {
+        width: 50px;
+        height: 3px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        background-color: $primary;
+        transform: rotate(45deg);
+        transform-origin: left center;
+
+        &:nth-child(2){
+          transform: rotate(-45deg);
+          top: 35px;
+        }
+      }
+    }
+  }
+}
+
+
+
+body.modal-open {
+  overflow: hidden;
 }
