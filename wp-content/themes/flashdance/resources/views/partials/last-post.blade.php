@@ -1,10 +1,10 @@
 <section class="box-last-post">
   <div class="container">
     <div class="row justify-content-between align-items-baseline">
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <h2 class="title__primary">{{ __('última hora', 'sage') }}</h2>
       </div>
-      <div class="col-6 text-right">
+      <div class="col-12 col-md-6 text-md-right">
         <a href="{{get_permalink(get_option('page_for_posts')) }}" class="link-to">
           {{ __('ir a noticias', 'sage') }}<i class="fas fa-chevron-right"></i>
         </a>

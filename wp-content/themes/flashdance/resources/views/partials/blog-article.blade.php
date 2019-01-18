@@ -1,4 +1,4 @@
-<div class="col-12 col-md-4 grid-item">
+<div class="col-12 col-md-6 col-lg-4 grid-item">
   <article @php post_class() @endphp>
     <a class="see-more" href="@php the_permalink() @endphp">
       @if ( has_post_thumbnail() )

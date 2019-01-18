@@ -7,16 +7,20 @@
     <section class="post-content">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-12 col-md-10 col-post">
-            <?php if( has_post_thumbnail() ): ?>
-             <div class="post_thumbnail">
-                <?php the_post_thumbnail('full') ?>
-              </div>
-            <?php endif; ?> 
-            
-            <div class="row justify-content-center">
-              <div class="content">
-                <?php echo $__env->make('partials.content-single-'.get_post_type(), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+          <div class="col-12 col-lg-10 ">
+            <div class="col-post">
+              <?php if( has_post_thumbnail() ): ?>
+               <div class="post_thumbnail">
+                  <?php the_post_thumbnail('full') ?>
+                </div>
+              <?php endif; ?> 
+
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="content">
+                    <?php echo $__env->make('partials.content-single-'.get_post_type(), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

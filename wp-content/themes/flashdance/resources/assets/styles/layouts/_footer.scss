@@ -4,17 +4,65 @@ footer {
   margin-top: -60px;
   @include clip-path(polygon(0 0, 100% 60px, 100% 100%, 0% 100%));
   
+  @media (max-width: 991px){
+    margin-top: -30px;
+    @include clip-path(polygon(0 0, 100% 30px, 100% 100%, 0% 100%));
+  }
+  
+  @media (max-width: 767px){
+    margin-top: -15px;
+    @include clip-path(polygon(0 0, 100% 15px, 100% 100%, 0% 100%));
+  }
+  
   .custom-logo-link {
     margin-bottom: 160px;
     display: block;
+    
+    @media (max-width: 991px) {
+      margin-bottom: 80px;
+    }
+    
+    @media (max-width: 767px) {
+      margin: 0 auto 40px;
+      text-align: center;
+    }
     
     img {
       max-width: 360px;
     }
   }
   
+  .box-social {
+    margin-bottom: 40px;
+    
+    .social-icon {
+      font-size: 24px;
+      margin-left: 24px;
+
+      &:nth-child(1) {
+        margin-left: 0;
+      }
+
+      &:hover {
+        opacity: 1;
+        color: $secondary;
+        text-decoration: none;
+      }
+    }
+  }
+  
   .row-logos {
     margin-bottom: 60px;
+    
+    div[class^='col-']{
+      text-align: center;
+    }
+    
+    @media (max-width: 991px) {
+      img {
+        margin: 32px 0;
+      }
+    }
   }
   
   .footer-legales {
@@ -32,13 +80,3 @@ footer {
   }
 }
 
-.social-icon {
-  font-size: 24px;
-  margin-left: 24px;
-
-  &:hover {
-    opacity: 1;
-    color: $secondary;
-    text-decoration: none;
-  }
-}

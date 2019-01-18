@@ -1,10 +1,12 @@
 .button {
   font-size: 16px;
   font-weight: 800;
-  padding: 19px 44px;
+  padding: 19px 20px;
   text-transform: uppercase;
   border: 5px solid transparent;
   display: inline-block;
+  max-width: 250px;
+  text-align: center;
 
   &__pink {
     color: #fff;

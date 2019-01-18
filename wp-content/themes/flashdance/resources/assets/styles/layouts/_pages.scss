@@ -4,6 +4,17 @@
   padding: 140px 0;
   background-color: $black;
   @include clip-path(polygon(0 60px, 100% 0, 100% calc(100% - 60px), 0% 100%));
+  
+  @media (max-width: 991px){
+    margin-top: -31px;
+    @include clip-path(polygon(0 30px, 100% 0, 100% calc(100% - 30px), 0% 100%));
+  }
+  
+  @media (max-width: 767px){
+    margin-top: -16px;
+    padding: 70px 0;
+    @include clip-path(polygon(0 15px, 100% 0, 100% calc(100% - 15px), 0% 100%));
+  }
 
   h2 {
     color: #fff;
@@ -15,7 +26,7 @@
     padding-top: 56.25%;
     margin-bottom: 80px;
     
-    .responsive-iframe {
+    iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -38,14 +49,23 @@
 
   .content {
     margin-right: 30px;
+    
+    @media (max-width: 991px) {
+      margin-right: 0;
+    }
   }
   
   .img__clip {
     margin-top: 80px;
+    width: 100%;
   }
 
   &.box-separator {
     margin-bottom: 140px;
+    
+    @media (max-width: 767px) {
+      margin-bottom: 70px;
+    }
 
     .container {
       &::after {
@@ -57,27 +77,48 @@
         background-color: $grey;
         transform-origin: top left;
         transform: skewY(3deg);
+        
+        @media (max-width: 991px){
+          transform: skewY(1.5deg);
+        }
       }
     }
   }
-}
+  
+  &:nth-child(even) {
+    .row {
+      flex-direction: row-reverse;
 
-.box-text-img:nth-child(even) {
-  .row {
-    flex-direction: row-reverse;
+      .content {
+        margin-left: 30px;
+        margin-right: 0;
 
-    .content {
-      margin-left: 30px;
-      margin-right: 0;
+        @media (max-width: 991px) {
+          margin-left: 0;
+        }
+      }
     }
   }
+  
 }
+
+
 
 .box-instagram {
   background-color: $third;
   padding: 140px 0;
   margin-top: -60px;
   @include clip-path(polygon(0 60px, 100% 0, 100% 100%, 0% calc(100% - 60px)));
+  
+  @media (max-width: 991px){
+    margin-top: -31px;
+    @include clip-path(polygon(0 30px, 100% 0, 100% 100%, 0% calc(100% - 30px)));
+  }
+  
+  @media (max-width: 991px){
+    margin-top: -16px;
+    @include clip-path(polygon(0 15px, 100% 0, 100% 100%, 0% calc(100% - 15px)));
+  }
   
   .col-insta {
     padding: 0 5px;
@@ -97,6 +138,14 @@
   padding: 140px 0;
   @include clip-path(polygon(0 0, 100% 60px, 100% calc(100% - 60px), 0% 100%));
   
+  @media (max-width: 991px){
+    @include clip-path(polygon(0 0, 100% 30px, 100% calc(100% - 30px), 0% 100%));
+  }
+  
+  @media (max-width: 767px){
+    @include clip-path(polygon(0 0, 100% 15px, 100% calc(100% - 15px), 0% 100%));
+  }
+    
   .col-carousel {
     padding: 0;
   }
@@ -114,6 +163,12 @@
       font-weight: 300;
       line-height: 40px;
       margin-bottom: 24px;
+      
+      @media (max-width: 767px){
+        font-size: 20px;
+        line-height: 24px;
+      }
+      
     }
     .author {
       p {
@@ -156,6 +211,30 @@
   padding: 80px 0;
   background-color: #fff;
   @include clip-path(polygon(0 0, 100% 60px, 100% calc(100% - 60px), 0% 100%));
+  
+  @media (max-width: 991px){
+    @include clip-path(polygon(0 0, 100% 30px, 100% calc(100% - 30px), 0% 100%));
+  }
+  
+  @media (max-width: 767px){
+    padding: 60px 0;
+    @include clip-path(polygon(0 0, 100% 15px, 100% calc(100% - 15px), 0% 100%));
+    
+    .title__primary {
+      margin-bottom: 20px;
+    }
+    
+    .link-to {
+      margin-bottom: 40px;
+      text-align: left;
+      display: block;
+    }
+    
+    .box-article {
+      margin-bottom: 32px;
+    }
+  }
+  
 }
 
 .box-newsletter {
@@ -188,6 +267,10 @@
         border-color: $secondary;
         outline: none;
       }
+      
+      @media (max-width: 767px) {
+        margin-bottom: 24px;
+      }
     }
     
     @include placeholder('input', $primary);
@@ -213,6 +296,10 @@
         border-color: transparent;
         outline: none;
       }
+      
+      @media (max-width: 767px) {
+        max-width: 100%;
+      }
     }
   }
 }
@@ -230,9 +317,20 @@
 
 .blog-header {
   margin-top: -60px;
-  padding: 120px 0 90px;
+  padding: 120px 0 120px;
   background-color: #fff;
   @include clip-path(polygon(0 0, 100% 60px, 100% calc(100% - 60px), 0% 100%));
+  
+  @media (max-width: 991px){
+    margin-top: -30px;
+    padding: 60px 0 60px;
+    @include clip-path(polygon(0 0, 100% 30px, 100% calc(100% - 30px), 0% 100%));
+  }
+  
+  @media (max-width: 767px){
+    margin-top: -15px;
+    @include clip-path(polygon(0 0, 100% 15px, 100% calc(100% - 15px), 0% 100%));
+  }
 
   .title__primary {
     margin: 0;
