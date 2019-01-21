@@ -3,9 +3,7 @@
 @section('content')
   @include('partials.header-blog')
   @if (!have_posts())
-    <div class="alert alert-warning">
-      {{ __('Lo sentimos, no se encontraron resultados.', 'sage') }}
-    </div>
+    {{ __('Lo sentimos, no se encontraron resultados.', 'sage') }}
     {!! get_search_form(false) !!}
   @endif
 

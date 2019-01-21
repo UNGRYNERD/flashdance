@@ -1,5 +1,11 @@
 /* eslint-disable */
 $(document).ready(function(){
+  
+  //PRELOADER
+  $('.box-loader').fadeIn(200);
+  setTimeout(function(){
+      $('.box-loader').fadeOut(400);
+  },700);
 
   // MENU TOOGLE
   $('.navbar-toggler').click(function(){

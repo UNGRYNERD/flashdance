@@ -135,3 +135,7 @@
     <?php endif; ?>
   </div>
 </div>
+
+<div class="box-loader">
+  <img src="<?= App\asset_path('images/logo_flashdance.png'); ?>;" alt="arrow slider left">
+</div>
