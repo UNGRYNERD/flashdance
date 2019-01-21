@@ -631,3 +631,42 @@
 body.modal-open {
   overflow: hidden;
 }
+
+// PAGINA 404, BUSQUEDA
+.search-form {
+  margin: 24px 0;
+  
+  .search-field, .search-submit {
+    border-radius: 0;
+    border: 5px solid $primary;
+    padding: 10.5px 24px;
+    font-size: 24px;
+    font-weight: 300;
+    color: #e523bb;
+    height: 72px;
+    
+    &:focus, &:active, &:active:focus {
+      outline: none;
+    }
+  }
+  
+  .search-field {
+    margin-right: 30px;
+  }
+  
+  .search-submit {
+    background-color: $primary;
+    color: #fff;
+    transition: $transition;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    
+    &:hover {
+      background-color: transparent;
+      color: $primary;
+      border-color: $primary;
+    }
+  }
+  
+}

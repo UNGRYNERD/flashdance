@@ -17,7 +17,11 @@
           @endif
         </div>
         <div class="col-md-4 text-right d-none d-lg-block">
-          <a href="#" class="button button__pink">comprar entradas</a>
+          @if(get_field('boton_comprar_entradas', 'option'))
+            <a href="{{get_field('boton_comprar_entradas', 'option')}}" class="button button__pink">
+              {{get_field('texto_boton_comprar', 'option')}}
+            </a>
+          @endif
         </div>
       @else
         <div class="col-2">
@@ -31,7 +35,11 @@
         </div>
         <div class="col-10 text-right">
           <div class="d-none d-md-block d-lg-block d-xl-block">
-            <a href="#" class="button button__pink">comprar entradas</a>
+            @if(get_field('boton_comprar_entradas', 'option'))
+              <a href="{{ get_field('boton_comprar_entradas', 'option') }}" class="button button__pink">
+                {{get_field('texto_boton_comprar', 'option')}}
+              </a>
+            @endif
           </div>
           <div class="logo-home-top d-xl-none d-lg-none d-md-none">
             @if ( the_custom_logo() != 0 )
@@ -52,7 +60,11 @@
             @if ( the_custom_logo() != 0 )
               {{ the_custom_logo() }}
             @endif
-            <a href="#" class="button button__pink d-md-none d-lg-none d-xl-none">comprar entradas</a>
+            @if(get_field('boton_comprar_entradas', 'option'))
+              <a href="{{ get_field('boton_comprar_entradas', 'option') }}" class="button button__pink d-md-none d-lg-none d-xl-none">
+                {{get_field('texto_boton_comprar', 'option')}}
+              </a>
+            @endif
           </div>
           <div class="col-12 col-md-10">
             <div class="row justify-content-center row-countdown" countdown data-date="Mar 01 2019 21:30:00">
@@ -90,18 +102,28 @@
   @if (has_nav_menu('primary_navigation'))
     {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']) !!}
   @endif
-
-  <a href="#" class="button button__pink">comprar entradas</a>
-
+  
+  @if(get_field('boton_comprar_entradas', 'option'))
+    <a href="{{get_field('boton_comprar_entradas', 'option')}}" class="button button__pink">
+      {{get_field('texto_boton_comprar', 'option')}}
+    </a>
+  @endif
+  
   <div class="box-social">
-    <a href="" class="social-icon">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="" class="social-icon">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="" class="social-icon">
-      <i class="fab fa-twitter"></i>
-    </a>
+    @if(get_field('instagram', 'option'))
+      <a href="@php the_field('instagram', 'option') @endphp" class="social-icon" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    @endif
+    @if(get_field('facebook', 'option'))
+      <a href="@php the_field('facebook', 'option') @endphp" class="social-icon" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    @endif
+    @if(get_field('twitter', 'option'))
+      <a href="@php the_field('twitter', 'option') @endphp" class="social-icon" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+    @endif
   </div>
 </div>

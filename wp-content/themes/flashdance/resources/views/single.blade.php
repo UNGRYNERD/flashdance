@@ -8,9 +8,13 @@
     
     <section class="post-content">
       <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
          <div class="col-lg-1">
-           <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c45926293880d50"></script>
+           <div class="share-box">
+             <p class="title-share">Comparte</p>
+             <!-- addthis -->
+              <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c45926293880d50"></script>
+           </div>
          </div>
           <div class="col-12 col-lg-10 ">
             <div class="col-post">
