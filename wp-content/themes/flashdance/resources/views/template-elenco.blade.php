@@ -96,18 +96,16 @@
     <div id="modal-elenco">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-md-3 col-lg-2">
+          <div class="col-12 col-md-3">
             <div class="box-info"></div>
           </div>
-          <div class="col-12 col-md-8 col-lg-9">
+          <div class="col-12 col-md-9">
             <div class="contenido-elenco"></div>
           </div>
-          <div class="col-1">
-            <a href="#" class="close_modal">
-              <span></span>
-              <span></span>
-            </a>
-          </div>
+          <a href="#" class="close_modal">
+            <span></span>
+            <span></span>
+          </a>
         </div>
       </div>
     </div>

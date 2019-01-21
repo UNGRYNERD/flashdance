@@ -7,6 +7,9 @@
     <section class="post-content">
       <div class="container">
         <div class="row justify-content-center">
+         <div class="col-lg-1">
+           <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c45926293880d50"></script>
+         </div>
           <div class="col-12 col-lg-10 ">
             <div class="col-post">
               <?php if( has_post_thumbnail() ): ?>
@@ -16,7 +19,7 @@
               <?php endif; ?> 
 
               <div class="row justify-content-center">
-                <div class="col-12">
+                <div class="col-11 col-md-10">
                   <div class="content">
                     <?php echo $__env->make('partials.content-single-'.get_post_type(), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                   </div>

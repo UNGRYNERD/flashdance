@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1139px" height="2px" viewBox="0 0 1139 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Line</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#DDDDDD" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#DDDDDD" offset="53.3282153%"></stop>
+            <stop stop-color="#DDDDDD" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="flashdance" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="blog---listado" transform="translate(-231.000000, -2911.000000)" fill-rule="nonzero" stroke="url(#linearGradient-1)">
+            <path d="M230,2912 L1370,2912.3" id="Line"></path>
+        </g>
+    </g>
+</svg>

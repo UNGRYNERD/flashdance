@@ -16,7 +16,7 @@
             {{ the_custom_logo() }}
           @endif
         </div>
-        <div class="col-md-4 text-right d-none d-md-block">
+        <div class="col-md-4 text-right d-none d-lg-block">
           <a href="#" class="button button__pink">comprar entradas</a>
         </div>
       @else
@@ -30,8 +30,16 @@
           </nav>
         </div>
         <div class="col-10 text-right">
-          <a href="#" class="button button__pink">comprar entradas</a>
+          <div class="d-none d-md-block d-lg-block d-xl-block">
+            <a href="#" class="button button__pink">comprar entradas</a>
+          </div>
+          <div class="logo-home-top d-xl-none d-lg-none d-md-none">
+            @if ( the_custom_logo() != 0 )
+              {{ the_custom_logo() }}
+            @endif
+          </div>
         </div>
+
       @endif
     </div>
   </div>
@@ -41,9 +49,10 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 text-center logo-home">
-              @if ( the_custom_logo() != 0 )
-                {{ the_custom_logo() }}
-              @endif
+            @if ( the_custom_logo() != 0 )
+              {{ the_custom_logo() }}
+            @endif
+            <a href="#" class="button button__pink d-md-none d-lg-none d-xl-none">comprar entradas</a>
           </div>
           <div class="col-12 col-md-10">
             <div class="row justify-content-center row-countdown" countdown data-date="Mar 01 2019 21:30:00">

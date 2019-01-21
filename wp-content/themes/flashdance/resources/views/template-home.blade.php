@@ -90,7 +90,7 @@
       @endforeach
     @endif
 
-    <section class="box-testimonials">
+    <section class="box-testimonials d-none">
       <div class="container">
         <div class="row">
           <div class="col-12">

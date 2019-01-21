@@ -3,7 +3,7 @@
   padding: 40px 0;
   height: 244px;
   background-image: url('../images/bg_flashdance_header.jpg');
-  background-position: center;
+  background-position: center bottom;
   background-size: auto;
   background-repeat: no-repeat;
   background-color: $black;
@@ -14,8 +14,11 @@
     @include clip-path(polygon(0 0, 100% 0, 100% 100%, 0% calc(100% - 30px)));
   }
   
+  @media (max-width: 768px){
+    background-position: 58% 90%
+  }
+  
   @media (max-width: 767px){
-    background-position: bottom center;
     @include clip-path(polygon(0 0, 100% 0, 100% 100%, 0% calc(100% - 15px)));
   }
   
@@ -24,6 +27,12 @@
     margin: -24px 0 0;
     max-width: 290px;
     width: 100%;
+    
+    @media (max-width: 991px) {
+      margin: 0;
+      max-width: 200px;
+      float: right;
+    }
 
     img {
       width: 100%;
@@ -78,6 +87,10 @@
   bottom: 0;
   transition: $transition;
   transform: translateX(-100%);
+  
+  @media (max-width: 767px) {
+    padding: 56px;
+  }
 
   &.open{
     transform: translateX(0%);
@@ -178,24 +191,29 @@
     }
     
     @media (max-width: 767px){
-      height: 700px;
+      height: 600px;
+      background-position: 68% bottom;
       @include clip-path(polygon(0 0, 100% 0, 100% calc(100% - 15px), 0% 100%));
+      
+      .button {
+        margin: 80px 0;
+      }
     }
 
     .logo-home {
       .custom-logo-link {
         max-width: 554px;
         margin: 80px auto;
+        float: none;
         
         @media (max-width: 767px){
-          max-width: 380px
+          display: none;
         }
         
         img {
           width: 100%;
         }
       }
-
     }
 
     .row-countdown {

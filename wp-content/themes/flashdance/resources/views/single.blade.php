@@ -9,6 +9,9 @@
     <section class="post-content">
       <div class="container">
         <div class="row justify-content-center">
+         <div class="col-lg-1">
+           <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c45926293880d50"></script>
+         </div>
           <div class="col-12 col-lg-10 ">
             <div class="col-post">
               @if ( has_post_thumbnail() )
@@ -18,7 +21,7 @@
               @endif 
 
               <div class="row justify-content-center">
-                <div class="col-12">
+                <div class="col-11 col-md-10">
                   <div class="content">
                     @include('partials.content-single-'.get_post_type())
                   </div>

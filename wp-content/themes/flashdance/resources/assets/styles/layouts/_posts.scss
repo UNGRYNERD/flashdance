@@ -117,18 +117,13 @@
   
   article {    
     header {
-      margin-left: 98px;
-      margin-right: 98px;
       margin-bottom: 16px;
       
-      @media (max-width: 991px) {
-        margin-left: 49px;
-        margin-right: 49px;
-      }
-      
-      @media (max-width: 767px) {
-        margin-left: 24px;
-        margin-right: 24px;
+      @media (max-width: 767px) {        
+       .entry-title {
+          font-size: 32px;
+          line-height: 40px;
+        }
       }
       
       time {
@@ -139,46 +134,17 @@
     }
     
     .entry-content {
-      * {
-        margin-left: 98px;
-        margin-right: 98px;
-        
-        @media (max-width: 991px) {
-          margin-left: 49px;
-          margin-right: 49px;
-        }
-        
-        @media (max-width: 767px) {
-          margin-left: 24px;
-          margin-right: 24px;
-        }
-      }
-
-      strong, li, blockquote, em, span, b, ol {
-        margin-left: 0;
-        margin-right: 0;
-      }
       
       img {
         margin-bottom: 32px;
       }
       
       figure {
-        margin: 0 98px;
+        margin: 0;
         position: relative;
         margin-bottom: 32px;
         width: auto !important;
         max-width: 100%;
-        
-        @media (max-width: 991px) {
-          margin-left: 49px;
-          margin-right: 49px;
-        }
-        
-        @media (max-width: 767px) {
-          margin-left: 24px;
-          margin-right: 24px;
-        }
         
         img {
           margin: 0;
@@ -249,7 +215,7 @@
       blockquote {
         position: relative;
         padding: 72px 98px 72px 192px;
-        margin-bottom: 32px;
+        margin: 0 -100px 32px;
         background-color: $secondary;
         @include clip-path(polygon(0 0, 100% 30px, 100% calc(100% - 30px), 0% 100%));
         

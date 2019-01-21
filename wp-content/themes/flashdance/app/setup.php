@@ -15,6 +15,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('fa_fonts', '//use.fontawesome.com/releases/v5.6.3/css/all.css', false, null );
     wp_enqueue_script('countdown.js', asset_path('scripts/countdown.js'), ['jquery'], null, true);
     wp_enqueue_script('isotope.js', asset_path('scripts/isotope.js'), ['jquery'], null, true);
+    wp_enqueue_script('imagesloaded.js', asset_path('scripts/imagesloaded.js'), ['jquery'], null, true);
     wp_enqueue_script('jk_scripts.js', asset_path('scripts/jkscript.js'), ['jquery'], null, true);
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);

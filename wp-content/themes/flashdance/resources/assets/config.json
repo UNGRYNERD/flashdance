@@ -15,6 +15,12 @@
     ],
     "isotope": [
       "./scripts/isotope.js"
+    ],
+    "loadmore": [
+      "./scripts/loadmore.js"
+    ],
+    "imagesloaded": [
+      "./scripts/imagesloaded.js"
     ]
   },
   "publicPath": "/wp-content/themes/flashdance",
