@@ -19,7 +19,9 @@
                       <?php echo $item['iframe_video'] ?>
                     </div>
                   <?php endif; ?>
-                  <a href="#" class="button button__pink">Reserva tus entradas</a>
+                  <?php if($item['titulo_boton']): ?>
+                    <a href="<?php echo e($item['url_externa']); ?>" class="button button__pink"><?php echo e($item['titulo_boton']); ?></a>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>

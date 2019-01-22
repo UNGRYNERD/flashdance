@@ -157,6 +157,14 @@
         img {
           margin: 0;
           width: 100%;
+
+          .alignright {
+            margin-left: 32px;
+          }
+
+          .alignleft {
+            margin-right: 32px;
+          }
         }
         
         figcaption {
@@ -180,11 +188,6 @@
       
       p {
         margin-bottom: 30px;
-        
-        * {
-          margin-left: 0;
-          margin-right: 0;
-        }
         
         a {
           color: $primary;

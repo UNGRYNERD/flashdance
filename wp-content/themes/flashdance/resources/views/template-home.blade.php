@@ -25,7 +25,9 @@
                       @php echo $item['iframe_video'] @endphp
                     </div>
                   @endif
-                  <a href="#" class="button button__pink">Reserva tus entradas</a>
+                  @if($item['titulo_boton'])
+                    <a href="{{ $item['url_externa']}}" class="button button__pink" target="_blank">{{ $item['titulo_boton'] }}</a>
+                  @endif
                 </div>
               </div>
             </div>
