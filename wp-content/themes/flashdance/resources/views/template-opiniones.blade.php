@@ -69,7 +69,13 @@
                     @endif
                     @php the_content() @endphp
                     @if( get_field('tipo') == 'prensa')
-                      <a href="#" class="button button__pink">
+                      @if( get_field('tipo_de_nota_de_prensa') == 'fichero')
+                        @php $prensa = get_field('archivo_nota_de_prensa')['url']; @endphp
+                      
+                      @elseif( get_field('tipo_de_nota_de_prensa') == 'url')
+                        @php $prensa = get_field('url_nota_de_prensa'); @endphp
+                      @endif
+                      <a href="{{$prensa}}" class="button button__pink" target="_blank">
                         @if(get_field('titulo'))
                           {{ get_field('titulo') }}
                         @endif

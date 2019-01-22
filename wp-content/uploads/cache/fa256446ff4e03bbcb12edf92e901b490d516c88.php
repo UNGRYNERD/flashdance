@@ -20,7 +20,7 @@
                     </div>
                   <?php endif; ?>
                   <?php if($item['titulo_boton']): ?>
-                    <a href="<?php echo e($item['url_externa']); ?>" class="button button__pink"><?php echo e($item['titulo_boton']); ?></a>
+                    <a href="<?php echo e($item['url_externa']); ?>" class="button button__pink" target="_blank"><?php echo e($item['titulo_boton']); ?></a>
                   <?php endif; ?>
                 </div>
               </div>
@@ -82,54 +82,79 @@
             </div>
           </section>       
         <?php endif; ?>
+
+        
+        <?php if($item['acf_fc_layout'] == 'bloque_opiniones'): ?>
+          <section class="box-testimonials">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                    <div id="carouseltestimonials" class="carousel slide carousel-fade" data-ride="carousel">
+                      <div class="row justify-content-center">
+                        <div class="col-10 col-carousel">
+                          <img class="carousel-icon" src="<?= App\asset_path('images/icons/blockquoute-icon.svg'); ?>" alt="blockquote icon">
+                          <div class="carousel-inner">
+
+                            <?php $__currentLoopData = $item['anadir_opinion']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $opinion): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                              <?php if($key == 0): ?>
+                                <?php $active = ' active'; ?>
+                              <?php else: ?>
+                                <?php $active = ' '; ?>
+                              <?php endif; ?>
+                              <div class="carousel-item <?php echo e($active); ?>">
+                                <div class="content">
+                                  <p><?php echo e($opinion['opinion']->post_content); ?></p>
+                                  <div class="author">
+                                    <?php if( (get_field('tipo', $opinion['opinion']->ID ) == 'critica') || (get_field('tipo', $opinion['opinion']->ID) == 'usuarios')): ?>
+                                        <p>
+                                          <?php if(get_field('titulo', $opinion['opinion']->ID)): ?>
+                                            <?php echo e(get_field('titulo', $opinion['opinion']->ID)); ?>
+
+                                          <?php endif; ?>
+                                          <?php if(get_field('subtitulo', $opinion['opinion']->ID)): ?>
+                                            <span>, <?php echo e(get_field('subtitulo', $opinion['opinion']->ID)); ?></span>
+                                          <?php endif; ?>
+                                        </p>
+                                    <?php endif; ?>
+
+                                    <?php if( get_field('tipo', $opinion['opinion']->ID ) == 'prensa'): ?>
+                                      <?php if( get_field('tipo_de_nota_de_prensa', $opinion['opinion']->ID) == 'fichero'): ?>
+                                        <?php $prensa = get_field('archivo_nota_de_prensa', $opinion['opinion']->ID)['url']; ?>
+                                      <?php elseif( get_field('tipo_de_nota_de_prensa', $opinion['opinion']->ID) == 'url'): ?>
+                                        <?php $prensa = get_field('url_nota_de_prensa', $opinion['opinion']->ID); ?>
+                                      <?php endif; ?>
+                                      <a href="<?php echo e($prensa); ?>" class="button button__blue" target="_blank">
+                                        <?php if(get_field('titulo', $opinion['opinion']->ID)): ?>
+                                          <?php echo e(get_field('titulo', $opinion['opinion']->ID)); ?>
+
+                                        <?php endif; ?>
+                                      </a>
+                                    <?php endif; ?>
+                                  </div>
+                                </div>
+                              </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                          </div>
+                      </div>
+                    </div>
+                    
+                    <a class="carousel-control carousel-control-prev" href="#carouseltestimonials" role="button" data-slide="prev">
+                      <img src="<?= App\asset_path('images/icons/arrow-left.svg'); ?>;" alt="arrow slider left">
+                    </a>
+                    <a class="carousel-control carousel-control-next" href="#carouseltestimonials" role="button" data-slide="next">
+                      <img src="<?= App\asset_path('images/icons/arrow-right.svg'); ?>;" alt="arrow slider right">
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        <?php endif; ?>
       
       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <?php endif; ?>
 
-    <section class="box-testimonials d-none">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-                
-              <div id="carouseltestimonials" class="carousel slide carousel-fade" data-ride="carousel">
-               
-                <div class="row justify-content-center">
-                  <div class="col-10 col-carousel">
-                    <img class="carousel-icon" src="<?= App\asset_path('images/icons/blockquoute-icon.svg'); ?>" alt="blockquote icon">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="content">
-                          <p>“La Familia Addams está llena de encanto, humor inteligente y sorpresas que explican por qué es un ÉXITO en su tour internacional.”</p>
-                          <div class="author">
-                            <p>BARBARA WALTERS <span>The View</span></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="content">
-                          <p>“La Familia Addams está llena de encanto, humor inteligente y sorpresas que explican por qué es un ÉXITO en su tour internacional. La Familia Addams está llena de encanto, humor inteligente y sorpresas que explican por qué es un ÉXITO en su tour internacional.”</p>
-                          <div class="author">
-                            <p>BARBARA WALTERS <span>The View</span></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <a class="carousel-control carousel-control-prev" href="#carouseltestimonials" role="button" data-slide="prev">
-                  <img src="<?= App\asset_path('images/icons/arrow-left.svg'); ?>;" alt="arrow slider left">
-                </a>
-                <a class="carousel-control carousel-control-next" href="#carouseltestimonials" role="button" data-slide="next">
-                  <img src="<?= App\asset_path('images/icons/arrow-right.svg'); ?>;" alt="arrow slider right">
-                </a>
-              </div>
-
-            
-          </div>
-        </div>
-      </div>
-    </section>
     
   <?php endwhile; ?>
 <?php $__env->stopSection(); ?>

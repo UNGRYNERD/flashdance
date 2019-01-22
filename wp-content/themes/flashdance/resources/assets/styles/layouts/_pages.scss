@@ -193,6 +193,18 @@
           font-weight: 400;  
         }
       }
+
+      .button__blue {
+        text-transform: lowercase;
+        background-color: transparent;
+        color: $third;
+        border-color: $third;
+
+        &:hover {
+          background-color: $third;
+          color: $secondary;
+        }
+      }
     }
   }
 }
@@ -292,7 +304,7 @@
       padding: 19px 30px;
       background-color: transparent;
       font-weight: 700;
-      text-transform: uppercase;
+      text-transform: capitalize;
       max-width: 165px;
       width: 100%;
       color: #fff;

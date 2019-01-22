@@ -145,6 +145,14 @@
       
       img {
         margin-bottom: 32px;
+
+        &.alignright {
+          margin-left: 32px;
+        }
+
+       &.alignleft {
+          margin-right: 32px;
+        }
       }
       
       figure {
@@ -157,14 +165,6 @@
         img {
           margin: 0;
           width: 100%;
-
-          .alignright {
-            margin-left: 32px;
-          }
-
-          .alignleft {
-            margin-right: 32px;
-          }
         }
         
         figcaption {

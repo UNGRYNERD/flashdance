@@ -88,54 +88,77 @@
             </div>
           </section>       
         @endif
+
+        {{-- Bloque instagram --}}
+        @if($item['acf_fc_layout'] == 'bloque_opiniones')
+          <section class="box-testimonials">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                    <div id="carouseltestimonials" class="carousel slide carousel-fade" data-ride="carousel">
+                      <div class="row justify-content-center">
+                        <div class="col-10 col-carousel">
+                          <img class="carousel-icon" src="@asset('images/icons/blockquoute-icon.svg')" alt="blockquote icon">
+                          <div class="carousel-inner">
+
+                            @foreach( $item['anadir_opinion'] as $key => $opinion )
+                              @if($key == 0)
+                                @php $active = ' active'; @endphp
+                              @else
+                                @php $active = ' '; @endphp
+                              @endif
+                              <div class="carousel-item {{ $active }}">
+                                <div class="content">
+                                  <p>{{ $opinion['opinion']->post_content }}</p>
+                                  <div class="author">
+                                    @if( (get_field('tipo', $opinion['opinion']->ID ) == 'critica') || (get_field('tipo', $opinion['opinion']->ID) == 'usuarios'))
+                                        <p>
+                                          @if(get_field('titulo', $opinion['opinion']->ID))
+                                            {{ get_field('titulo', $opinion['opinion']->ID) }}
+                                          @endif
+                                          @if(get_field('subtitulo', $opinion['opinion']->ID))
+                                            <span>, {{ get_field('subtitulo', $opinion['opinion']->ID) }}</span>
+                                          @endif
+                                        </p>
+                                    @endif
+
+                                    @if( get_field('tipo', $opinion['opinion']->ID ) == 'prensa')
+                                      @if( get_field('tipo_de_nota_de_prensa', $opinion['opinion']->ID) == 'fichero')
+                                        @php $prensa = get_field('archivo_nota_de_prensa', $opinion['opinion']->ID)['url']; @endphp
+                                      @elseif( get_field('tipo_de_nota_de_prensa', $opinion['opinion']->ID) == 'url')
+                                        @php $prensa = get_field('url_nota_de_prensa', $opinion['opinion']->ID); @endphp
+                                      @endif
+                                      <a href="{{ $prensa }}" class="button button__blue" target="_blank">
+                                        @if(get_field('titulo', $opinion['opinion']->ID))
+                                          {{ get_field('titulo', $opinion['opinion']->ID) }}
+                                        @endif
+                                      </a>
+                                    @endif
+                                  </div>
+                                </div>
+                              </div>
+                            @endforeach
+                          </div>
+                      </div>
+                    </div>
+                    
+                    <a class="carousel-control carousel-control-prev" href="#carouseltestimonials" role="button" data-slide="prev">
+                      <img src="@asset('images/icons/arrow-left.svg');" alt="arrow slider left">
+                    </a>
+                    <a class="carousel-control carousel-control-next" href="#carouseltestimonials" role="button" data-slide="next">
+                      <img src="@asset('images/icons/arrow-right.svg');" alt="arrow slider right">
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        @endif
       
       @endforeach
     @endif
 
-    <section class="box-testimonials d-none">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-                
-              <div id="carouseltestimonials" class="carousel slide carousel-fade" data-ride="carousel">
-               
-                <div class="row justify-content-center">
-                  <div class="col-10 col-carousel">
-                    <img class="carousel-icon" src="@asset('images/icons/blockquoute-icon.svg')" alt="blockquote icon">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="content">
-                          <p>“La Familia Addams está llena de encanto, humor inteligente y sorpresas que explican por qué es un ÉXITO en su tour internacional.”</p>
-                          <div class="author">
-                            <p>BARBARA WALTERS <span>The View</span></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="content">
-                          <p>“La Familia Addams está llena de encanto, humor inteligente y sorpresas que explican por qué es un ÉXITO en su tour internacional. La Familia Addams está llena de encanto, humor inteligente y sorpresas que explican por qué es un ÉXITO en su tour internacional.”</p>
-                          <div class="author">
-                            <p>BARBARA WALTERS <span>The View</span></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <a class="carousel-control carousel-control-prev" href="#carouseltestimonials" role="button" data-slide="prev">
-                  <img src="@asset('images/icons/arrow-left.svg');" alt="arrow slider left">
-                </a>
-                <a class="carousel-control carousel-control-next" href="#carouseltestimonials" role="button" data-slide="next">
-                  <img src="@asset('images/icons/arrow-right.svg');" alt="arrow slider right">
-                </a>
-              </div>
-
-            
-          </div>
-        </div>
-      </div>
-    </section>
     
   @endwhile
 @endsection
