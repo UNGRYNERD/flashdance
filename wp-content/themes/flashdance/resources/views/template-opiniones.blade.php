@@ -71,7 +71,6 @@
                     @if( get_field('tipo') == 'prensa')
                       @if( get_field('tipo_de_nota_de_prensa') == 'fichero')
                         @php $prensa = get_field('archivo_nota_de_prensa')['url']; @endphp
-                      
                       @elseif( get_field('tipo_de_nota_de_prensa') == 'url')
                         @php $prensa = get_field('url_nota_de_prensa'); @endphp
                       @endif

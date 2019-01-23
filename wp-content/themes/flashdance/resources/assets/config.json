@@ -23,7 +23,7 @@
       "./scripts/imagesloaded.js"
     ]
   },
-  "publicPath": "/new/wp-content/themes/flashdance",
+  "publicPath": "/wp-content/themes/flashdance",
   "devUrl": "http://localhost/flashdance",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",

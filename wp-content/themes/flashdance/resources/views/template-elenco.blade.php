@@ -133,11 +133,17 @@ jQuery(document).ready(function($){
       $.post( "<?php echo get_template_directory_uri();?>/get-elenco.php", data ,function (response) {
         var res = JSON.parse(response);
 
+        if(typeof res.text === "undefined") {
+          var texto = '...';
+        } else {
+          var texto = res.text;
+        }
+
         setTimeout(function(){
             $('#modal-elenco').addClass('open');
             $('body').addClass('modal-open');
             $('#modal-elenco .box-info').append('<div class="info-ajax"><p>'+ res.name +'<span>'+res.puesto+'</span><p></div>');
-            $('#modal-elenco .contenido-elenco').append('<div class="info-ajax">'+ res.text +'</div>');
+            $('#modal-elenco .contenido-elenco').append('<div class="info-ajax">'+ texto +'</div>');
         }, 300);
 
       });

@@ -116,11 +116,43 @@
   }
   
   .share-box {
+    margin-bottom: 32px;
+
     .title-share {
       font-weight: 700;
       font-size: 10px;
+      line-height: 13px;
       text-transform: uppercase;
+      margin-bottom: 10px;
     }
+
+    .at-resp-share-element {
+      .at-share-btn {
+        margin-bottom: 1px;
+        padding: 9px;
+
+        &:active, &:focus, &:active:focus {
+          outline: 0;
+        }
+
+        &:hover {
+          transform: translate(0) !important;
+        }
+      }
+
+      .at4-share-count-container {
+        margin: 0;
+        float: none;
+        padding: 0;
+        display: block;
+        text-align: center; 
+
+        @media (max-width: 991px){
+          display: inline-block;
+        }
+      }
+    }
+
   }
   
   article {    
