@@ -346,3 +346,54 @@
   }
   
 }
+
+// GALLERY
+.single-galerias {
+  background-color: $bg-post;
+
+  .gallery-content {
+    padding: 60px 0;
+
+    h1 {
+      margin-bottom: 24px;
+    }
+
+    .entry-content {
+      margin-bottom: 52px;
+
+      p {
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .count-gallery {
+      margin-bottom: 24px;
+
+      p {
+        font-weight: 600;  
+        margin: 0;
+        display: inline-block;
+      }    
+
+      img {
+        max-width: 16px;
+        margin: 0 8px 0;
+        display: inline-block;
+        vertical-align: baseline;
+      }
+    }
+  }
+
+  .grid-item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  // Magnific popup
+  .mfp-bg {
+    background-color: rgba(0,0,0, 0.9);
+    opacity: 1;
+  }
+}

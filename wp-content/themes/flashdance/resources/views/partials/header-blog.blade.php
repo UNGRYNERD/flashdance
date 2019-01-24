@@ -2,7 +2,13 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-6">
-        <h1 class="title__primary">BLOG</h1>
+        <h1 class="title__primary">
+          @if(is_home() || is_singular('post'))
+            {{ __('BLOG', 'sage') }}
+          @elseif(is_page(1210) || is_singular('galerias'))
+            {{ __('galerías', 'sage') }}
+          @endif
+          </h1>
       </div>
       @if(is_singular('post'))
         <div class="col-6 text-right">

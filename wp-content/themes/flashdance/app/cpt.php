@@ -76,3 +76,40 @@ function post_type_opiniones() {
 
   register_post_type( 'opiniones', $args );
 }
+
+//CPT GALERIAS
+add_action( 'init', 'post_type_galerias' );
+
+function post_type_galerias() {
+  $labels = array(
+  'name' => _x( 'Galerías', 'post type general name' ),
+  'singular_name' => _x( 'Galerías', 'post type singular name' ),
+  'add_new' => _x( 'Añadir nueva Galerías', 'proyectos' ),
+  'add_new_item' => __( 'Añadir nueva Galerías' ),
+  'edit_item' => __( 'Editar Galerías' ),
+  'new_item' => __( 'Nueva Galerías' ),
+  'view_item' => __( 'Ver Galerías' ),
+  'search_items' => __( 'Buscar Galerías' ),
+  'not_found' =>  __( 'No se han encontrado Galerías' ),
+  'not_found_in_trash' => __( 'No se han encontrado Galerías en la papelera' )
+  );
+
+  $args = array( 'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'hierarchical' => true,
+    'menu_position' => null,
+    'menu_icon' => 'dashicons-camera',
+    'supports' => array( 
+      'title',
+      'editor',
+      'thumbnail'
+    )
+  );
+
+  register_post_type( 'galerias', $args );
+}
