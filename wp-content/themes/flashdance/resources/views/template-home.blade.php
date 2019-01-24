@@ -89,13 +89,13 @@
           </section>       
         @endif
 
-        {{-- Bloque instagram --}}
+        {{-- Bloque opiniones --}}
         @if($item['acf_fc_layout'] == 'bloque_opiniones')
-          <section class="box-testimonials">
+          <section class="box-slide">
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                    <div id="carouseltestimonials" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div id="carouselslide" class="carousel slide carousel-fade" data-ride="carousel">
                       <div class="row justify-content-center">
                         <div class="col-10 col-carousel">
                           <img class="carousel-icon" src="@asset('images/icons/blockquoute-icon.svg')" alt="blockquote icon">
@@ -108,7 +108,7 @@
                                 @php $active = ' '; @endphp
                               @endif
                               <div class="carousel-item {{ $active }}">
-                                <div class="content">
+                                <div class="content d-block w-100">
                                   <p>{{ $opinion['opinion']->post_content }}</p>
                                   <div class="author">
                                     @if( (get_field('tipo', $opinion['opinion']->ID ) == 'critica') || (get_field('tipo', $opinion['opinion']->ID) == 'usuarios'))
@@ -142,10 +142,10 @@
                       </div>
                     </div>
                     
-                    <a class="carousel-control carousel-control-prev" href="#carouseltestimonials" role="button" data-slide="prev">
+                    <a class="carousel-control carousel-control-prev" href="#carouselslide" role="button" data-slide="prev">
                       <img src="@asset('images/icons/arrow-left.svg');" alt="arrow slider left">
                     </a>
-                    <a class="carousel-control carousel-control-next" href="#carouseltestimonials" role="button" data-slide="next">
+                    <a class="carousel-control carousel-control-next" href="#carouselslide" role="button" data-slide="next">
                       <img src="@asset('images/icons/arrow-right.svg');" alt="arrow slider right">
                     </a>
 

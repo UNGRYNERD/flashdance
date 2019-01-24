@@ -141,7 +141,7 @@
   }
 }
 
-.box-testimonials {
+.box-slide {
   margin-top: -60px;
   position: relative;
   background-color: $secondary;
@@ -207,6 +207,58 @@
       }
     }
   }
+
+  &__img {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+
+    @include clip-path(polygon(0 60px, 100% 0, 100% 100%, 0% calc(100% - 60px)));
+  
+    @media (max-width: 991px){
+      @include clip-path(polygon(0 30px, 100% 0, 100% 100%, 0% calc(100% - 30px)));
+    }
+    
+    @media (max-width: 767px){
+      @include clip-path(polygon(0 15px, 100% 0, 100% 100%, 0% calc(100% - 15px)));
+    }
+
+    .carousel-control {
+
+      &.carousel-control-prev {
+        left: 60px;
+        
+        @media (max-width: 767px){
+          left: 5%;
+        }
+      }
+
+      &.carousel-control-next {
+        right: 60px;
+
+        @media (max-width: 767px){
+          right: 5%;
+        }
+      }
+    }
+    
+    .carousel-item {
+      .bg-item {
+        background-size: cover;
+        background-position: center;
+        height: 1000px;
+
+        @media (max-width: 1920px) {
+          height: 700px;
+        }
+
+        @media (max-width: 767px) {
+          height: 320px;
+        }
+      }
+    }
+  }
+
 }
 
 .carousel-control {
@@ -809,5 +861,59 @@ body.modal-open {
   &.open {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+// ESTATICA BLOQUES
+.template-bloques {
+  .entry-content {
+    blockquote {
+      @include clip-path(none);
+      padding: 30px 0;
+      margin: 0;
+      border-top: 1px solid $black;
+
+      p {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+    }
+  }
+}
+
+.box-text {
+  padding: 120px 0;
+  margin-top: -60px;
+  background-color: $bg-post;
+  @include clip-path(polygon(0 0, 100% 60px, 100% calc(100% - 60px), 0% 100%));
+  
+  @media (max-width: 991px){
+    padding: 60px 0;
+    margin-top: -30px;
+    @include clip-path(polygon(0 0, 100% 30px, 100% calc(100% - 30px), 0% 100%));
+  }
+  
+  @media (max-width: 767px){
+    margin-top: -15px;
+    @include clip-path(polygon(0 0, 100% 15px, 100% calc(100% - 15px), 0% 100%));
+  }
+
+  &:first-of-type {
+    margin: 0;
+  }
+  
+  &:first-of-type, &:nth-child(even) {
+    background-color: #fff;
+    @include clip-path(polygon(0 60px, 100% 0, 100% calc(100% - 60px), 0% 100%));
+
+    @media (max-width: 991px){
+      @include clip-path(polygon(0 30px, 100% 0, 100% calc(100% - 30px), 0% 100%));
+    }
+    
+    @media (max-width: 767px){
+      @include clip-path(polygon(0 15px, 100% 0x, 100% calc(100% - 15px), 0% 100%));
+    }
   }
 }

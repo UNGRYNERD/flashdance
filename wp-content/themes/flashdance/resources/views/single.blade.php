@@ -11,7 +11,7 @@
         <div class="row">
          <div class="col-12 col-lg-1">
            <div class="share-box">
-             <p class="title-share">Comparte</p>
+             <p class="title-share">{{__('Comparte', 'sage')}}</p>
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
                 <div class="addthis_inline_share_toolbox_hq60"></div>
            </div>
