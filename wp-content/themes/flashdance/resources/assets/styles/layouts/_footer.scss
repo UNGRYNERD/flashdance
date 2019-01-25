@@ -54,14 +54,39 @@ footer {
   
   .row-logos {
     margin-bottom: 60px;
-    
-    div[class^='col-']{
-      text-align: center;
-    }
-    
-    @media (max-width: 991px) {
+
+    .col-logos {
+      margin-bottom: 32px;
+
+      @media (max-width: 991px){
+        text-align: center;
+      }
+
+      p {
+        display: inline-block;
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-right: 32px;
+
+        @media (max-width: 991px){
+          display: block;
+        }
+      }
+  
       img {
-        margin: 32px 0;
+        margin: 0 32px 32px 0;
+  
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      
+      &.col-colaboran {
+        img {
+          max-height: 40px;
+          width: auto;
+        }
       }
     }
   }
