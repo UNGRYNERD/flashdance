@@ -28,6 +28,8 @@
             @while ($newargs->have_posts()) @php $newargs->the_post() @endphp
               @include('partials.galeria-article')
             @endwhile
+            @else
+              {{ __('Lo sentimos, no se encontraron resultados.', 'sage') }}
           @endif
       </div>
 

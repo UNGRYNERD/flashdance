@@ -49,6 +49,11 @@ h5 {
     content: "/";
     position: relative;
     color: $primary;
+    margin-right: 10px;
+
+    @media (max-width: 767px) {
+      margin-right: 0px;
+    }
   }
   
   &.no__line {

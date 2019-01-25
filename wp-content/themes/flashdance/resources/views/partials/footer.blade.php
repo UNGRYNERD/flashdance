@@ -46,37 +46,36 @@
         </div>
       </div>
     </div>
-    @if (get_field('logos', 'option'))
-      <div class="row row-logos align-items-center">
-        @if(get_field('titulo_produccion', 'option') || get_field('logos_produccion', 'option'))
-          @if (count (get_field('logos_produccion', 'option')) > 1 || count (get_field('logos_colaboran', 'option')) > 3)
-            @php $col = ' col-lg-12'; @endphp
-          @else 
-            @php $col = ' col-lg-6'; @endphp
+
+    <div class="row row-logos align-items-center">
+      @if(get_field('titulo_produccion', 'option') || get_field('logos_produccion', 'option'))
+        @if (count (get_field('logos_produccion', 'option')) > 1 || count (get_field('logos_colaboran', 'option')) > 3)
+          @php $col = ' col-lg-12'; @endphp
+        @else 
+          @php $col = ' col-lg-6'; @endphp
+        @endif
+        <div class="col-12 col-logos {{ $col }} ">
+          @if(get_field('titulo_produccion', 'option') )
+            <p>{{ get_field('titulo_produccion', 'option') }}</p>
+            @foreach(get_field('logos_produccion', 'option') as $item)
+              <img src="{{$item['sizes']['medium']}}" alt="{{$item['alt']}}" alt="{{$item['title']}}">
+            @endforeach
           @endif
-          <div class="col-12 col-logos {{ $col }} ">
-            @if(get_field('titulo_produccion', 'option') )
-              <p>{{ get_field('titulo_produccion', 'option') }}</p>
-              @foreach(get_field('logos_produccion', 'option') as $item)
-                <img src="{{$item['sizes']['medium']}}" alt="{{$item['alt']}}" alt="{{$item['title']}}">
-              @endforeach
-            @endif
-          </div>
-        @endif
+        </div>
+      @endif
 
-        @if(get_field('titulo_colaboran', 'option') || get_field('logos_colaboran', 'option'))
-          <div class="col-12 col-logos col-colaboran {{ $col }}">
-            @if(get_field('titulo_colaboran', 'option') )
-              <p>{{ get_field('titulo_colaboran', 'option') }}</p>
-              @foreach(get_field('logos_colaboran', 'option') as $item)
-                <img src="{{$item['sizes']['medium']}}" alt="{{$item['alt']}}" alt="{{$item['title']}}">
-              @endforeach
-            @endif
-          </div>
-        @endif
+      @if(get_field('titulo_colaboran', 'option') || get_field('logos_colaboran', 'option'))
+        <div class="col-12 col-logos col-colaboran {{ $col }}">
+          @if(get_field('titulo_colaboran', 'option') )
+            <p>{{ get_field('titulo_colaboran', 'option') }}</p>
+            @foreach(get_field('logos_colaboran', 'option') as $item)
+              <img src="{{$item['sizes']['medium']}}" alt="{{$item['alt']}}" alt="{{$item['title']}}">
+            @endforeach
+          @endif
+        </div>
+      @endif
+    </div>
 
-      </div>
-    @endif
     <div class="row">
       <div class="col-12 text-center">
         <p class="footer-legales">

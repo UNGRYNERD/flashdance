@@ -407,6 +407,11 @@
       top: 60px;
       right: 60px;
       cursor: pointer;
+
+      @media (max-width: 767px){
+        top: 20px;
+        right: 20px;
+      }
     }
   }
 
@@ -455,11 +460,19 @@
       &.mfp-arrow-left {
         background-image: url('../images/icons/arrow-left-white.svg');
         left: 60px;
+
+        @media (max-width: 767px){
+          left: 20px;
+        }
       }
 
       &.mfp-arrow-right {
         background-image: url('../images/icons/arrow-right-white.svg');
         right: 60px;
+
+        @media (max-width: 767px){
+          right: 20px;
+        }
       }
 
       &:before, &:after {
