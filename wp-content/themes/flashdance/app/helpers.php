@@ -185,7 +185,7 @@ function loadmore_ajax_handler(){
               </header>
               <div class="entry-summary">
                   <p><?php echo wp_trim_words( get_the_content(), 42, '...' ); ?></p>
-                  <p class="see-more">Leer más</p>
+                  <p class="see-more"><?php echo _x('Leer más', 'sage');?></p>
               </div>
             </div>   
           </a> 

@@ -19,6 +19,10 @@
     "loadmore": [
       "./scripts/loadmore.js"
     ],
+    "magnificpopup": [
+      "./scripts/magnific-popup.js",
+      "./styles/magnific-popup.css"
+    ],
     "imagesloaded": [
       "./scripts/imagesloaded.js"
     ]

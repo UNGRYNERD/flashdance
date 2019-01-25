@@ -44,5 +44,28 @@ $(document).ready(function(){
       });
     });
   }
+
+  // MAGNIFICPOPUP
+  $('.image-link').magnificPopup({
+    type: 'image',
+    gallery:{
+      enabled:true,
+      tCounter: '<span class="mfp-counter">%curr% de %total%</span>'
+    },
+
+    image: {
+      titleSrc: function(item) {
+            return item.el.data('title');
+         },
+
+      markup: '<div class="mfp-figure">'+
+                '<div class="mfp-img"></div>'+
+                '<div class="mfp-bottom-bar">'+
+                  '<p class="mfp-title"></p>'+
+                  '<div class="mfp-counter"></div>'+
+                '</div>'+
+              '</div>',
+    }
+  });
   
 })

@@ -10,7 +10,7 @@
           @endif
           </h1>
       </div>
-      @if(is_singular('post'))
+      @if( is_singular(array('post', 'galerias')) )
         <div class="col-6 text-right">
           @php                
             $prev_post = get_next_post();

@@ -27,7 +27,7 @@
               <div class="row grid">
                 @foreach(get_field('galeria') as $item)
                   <div class="col-12 col-md-4 grid-item">
-                    <a class="image-link" href="{{ $item['url'] }}" data-title="{{$item['title']}}">
+                    <a class="image-link" href="{{$item['sizes']['large']}}" data-title="{{$item['title']}}">
                       <img src="{{$item['sizes']['large']}}" alt="{{$item['alt']}}" title="{{$item['title']}}" >
                     </a>
                   </div>

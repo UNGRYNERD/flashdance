@@ -10,8 +10,13 @@
           @include('partials/entry-meta')
         </header>
         <div class="entry-summary">
-            <p>24 fotos</p>
-            <p class="see-more">{{ __('leer más', 'sage') }}</p>
+          @if(get_field('galeria'))
+            <div class="count-gallery">
+              <img src="@asset('images/icons/camera-icon.svg')" alt="camera icon">
+              <p>{{ count(get_field('galeria')) . _x(' fotos', 'sage') }}</p>
+            </div>
+          @endif
+          <p class="see-more">{{ __('leer más', 'sage') }}</p>
         </div>
       </div>   
     </a> 

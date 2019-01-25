@@ -13,7 +13,6 @@
         @while (have_posts()) @php the_post() @endphp
           @include('partials.blog-article')
             @php global $wp_query; @endphp
-
         @endwhile
       </div>
       @if( $wp_query->max_num_pages > 1 )

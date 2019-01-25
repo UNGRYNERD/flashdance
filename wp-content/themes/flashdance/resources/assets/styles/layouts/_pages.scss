@@ -434,6 +434,7 @@
     
     img {
       max-width: 100%;
+      width: 100%;
       height: auto;
     }
     
@@ -916,4 +917,9 @@ body.modal-open {
       @include clip-path(polygon(0 15px, 100% 0x, 100% calc(100% - 15px), 0% 100%));
     }
   }
+}
+
+// PAGINA GALERIAS
+.template-galerias {
+  background-color: $bg-post;
 }
