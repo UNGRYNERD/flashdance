@@ -48,37 +48,36 @@
         </div>
       </div>
     </div>
-    <?php if(get_field('logos', 'option')): ?>
-      <div class="row row-logos align-items-center">
-        <?php if(get_field('titulo_produccion', 'option') || get_field('logos_produccion', 'option')): ?>
-          <?php if(count (get_field('logos_produccion', 'option')) > 1 || count (get_field('logos_colaboran', 'option')) > 3): ?>
-            <?php $col = ' col-lg-12'; ?>
-          <?php else: ?> 
-            <?php $col = ' col-lg-6'; ?>
+
+    <div class="row row-logos align-items-center">
+      <?php if(get_field('titulo_produccion', 'option') || get_field('logos_produccion', 'option')): ?>
+        <?php if(count (get_field('logos_produccion', 'option')) > 1 || count (get_field('logos_colaboran', 'option')) > 3): ?>
+          <?php $col = ' col-lg-12'; ?>
+        <?php else: ?> 
+          <?php $col = ' col-lg-6'; ?>
+        <?php endif; ?>
+        <div class="col-12 col-logos <?php echo e($col); ?> ">
+          <?php if(get_field('titulo_produccion', 'option') ): ?>
+            <p><?php echo e(get_field('titulo_produccion', 'option')); ?></p>
+            <?php $__currentLoopData = get_field('logos_produccion', 'option'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <img src="<?php echo e($item['sizes']['medium']); ?>" alt="<?php echo e($item['alt']); ?>" alt="<?php echo e($item['title']); ?>">
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           <?php endif; ?>
-          <div class="col-12 col-logos <?php echo e($col); ?> ">
-            <?php if(get_field('titulo_produccion', 'option') ): ?>
-              <p><?php echo e(get_field('titulo_produccion', 'option')); ?></p>
-              <?php $__currentLoopData = get_field('logos_produccion', 'option'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <img src="<?php echo e($item['sizes']['medium']); ?>" alt="<?php echo e($item['alt']); ?>" alt="<?php echo e($item['title']); ?>">
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            <?php endif; ?>
-          </div>
-        <?php endif; ?>
+        </div>
+      <?php endif; ?>
 
-        <?php if(get_field('titulo_colaboran', 'option') || get_field('logos_colaboran', 'option')): ?>
-          <div class="col-12 col-logos col-colaboran <?php echo e($col); ?>">
-            <?php if(get_field('titulo_colaboran', 'option') ): ?>
-              <p><?php echo e(get_field('titulo_colaboran', 'option')); ?></p>
-              <?php $__currentLoopData = get_field('logos_colaboran', 'option'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <img src="<?php echo e($item['sizes']['medium']); ?>" alt="<?php echo e($item['alt']); ?>" alt="<?php echo e($item['title']); ?>">
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            <?php endif; ?>
-          </div>
-        <?php endif; ?>
+      <?php if(get_field('titulo_colaboran', 'option') || get_field('logos_colaboran', 'option')): ?>
+        <div class="col-12 col-logos col-colaboran <?php echo e($col); ?>">
+          <?php if(get_field('titulo_colaboran', 'option') ): ?>
+            <p><?php echo e(get_field('titulo_colaboran', 'option')); ?></p>
+            <?php $__currentLoopData = get_field('logos_colaboran', 'option'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <img src="<?php echo e($item['sizes']['medium']); ?>" alt="<?php echo e($item['alt']); ?>" alt="<?php echo e($item['title']); ?>">
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
+    </div>
 
-      </div>
-    <?php endif; ?>
     <div class="row">
       <div class="col-12 text-center">
         <p class="footer-legales">

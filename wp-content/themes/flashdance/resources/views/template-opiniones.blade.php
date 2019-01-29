@@ -29,10 +29,18 @@
         <div class="row justify-content-end">
           <div class="col-12">
             <div id="filters">
-                <p data-filter="*">Todos</button>
-                <p data-filter=".prensa">Notas de prensa</p>
-                <p data-filter=".critica">Criticas de prensa</p>
-                <p data-filter=".usuarios">Opiniones usuarios</p>
+                <p data-filter="*">
+                  {{ __('Todos', 'sage') }}
+                </p>
+                <p data-filter=".prensa">
+                {{ __('Notas de prens', 'sage') }}a
+                </p>
+                <p data-filter=".critica">
+                  {{ __('Criticas de prensa', 'sage') }}
+                </p>
+                <p data-filter=".usuarios">
+                  {{ __('Opiniones usuarios', 'sage') }}
+                </p>
             </div>
           </div>
         </div>

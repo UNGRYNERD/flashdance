@@ -293,6 +293,10 @@
       color: $primary;
       text-decoration: underline;
       margin: 0;
+
+      &:hover {
+        text-decoration: none
+      }
     }
   }
   

@@ -67,5 +67,41 @@ $(document).ready(function(){
               '</div>',
     }
   });
+
+    // FUNCTION ALTOS CON ACTUAL
+    $('.carousel').each(function(){
+      var carousel = $(this);
+      var altocontent = 0;
+      var contenido = $(this).find('.carousel-item');
+
+      $(contenido).each(function(){
+      if( $(this).actual('innerHeight') > altocontent) {
+          altocontent = $(this).actual('innerHeight');
+      }
+      }).promise().done(function () {
+        setTimeout(function(){
+          $(carousel).find('.carousel-item').css('height', altocontent); 
+        },800);
+      });
+    });
+
+    $(window).resize(function(){
+      $('.carousel').each(function(){
+
+        var carousel = $(this);
+        var altocontent = 0;
+        var contenido = $(this).find('.carousel-item');
+
+        $(contenido).each(function(){
+          if( $(this).actual('innerHeight') > altocontent) {
+            altocontent = $(this).actual('innerHeight');
+          }
+        }).promise().done(function () {
+          setTimeout(function(){
+            $(carousel).find('.carousel-item').css('height', altocontent); 
+          },800);
+        });
+      });
+    });
   
 })

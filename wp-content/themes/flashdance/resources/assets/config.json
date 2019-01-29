@@ -25,6 +25,9 @@
     ],
     "imagesloaded": [
       "./scripts/imagesloaded.js"
+    ],
+    "actual": [
+      "./scripts/actual.js"
     ]
   },
   "publicPath": "/wp-content/themes/flashdance",

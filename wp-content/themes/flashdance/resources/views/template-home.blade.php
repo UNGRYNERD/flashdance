@@ -95,7 +95,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                    <div id="carouselslide" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div id="carouselslide" class="carousel slide" data-ride="carousel">
                       <div class="row justify-content-center">
                         <div class="col-10 col-carousel">
                           <img class="carousel-icon" src="@asset('images/icons/blockquoute-icon.svg')" alt="blockquote icon">
