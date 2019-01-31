@@ -1,3 +1,10 @@
+<?php $tipo = get_field('tipo_pagina_entradas', 'option'); print_r($tipo); ?>
+<?php if( $tipo == 'url' ): ?>
+  <?php $url = get_field('boton_comprar_entradas', 'option'); $target = '_blank'; ?>
+<?php elseif( $tipo == 'pag' ): ?>
+  <?php $url = get_permalink(get_field('pagina_entradas', 'option')); $target = '_self';  ?>
+<?php endif; ?>
+
 <header class="header-banner">
   <div class="container">    
     <div class="row justify-content-between">
@@ -18,12 +25,10 @@
           <?php endif; ?>
         </div>
         <div class="col-md-4 text-right d-none d-lg-block">
-          <?php if(get_field('boton_comprar_entradas', 'option')): ?>
-            <a href="<?php echo e(get_field('boton_comprar_entradas', 'option')); ?>" class="button button__pink">
-              <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
+          <a href="<?php echo e($url); ?>" class="button button__pink" target="<?php echo e($target); ?>">
+            <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
 
-            </a>
-          <?php endif; ?>
+          </a>
         </div>
       <?php else: ?>
         <div class="col-2">
@@ -37,12 +42,10 @@
         </div>
         <div class="col-10 text-right">
           <div class="d-none d-md-block d-lg-block d-xl-block">
-            <?php if(get_field('boton_comprar_entradas', 'option')): ?>
-              <a href="<?php echo e(get_field('boton_comprar_entradas', 'option')); ?>" class="button button__pink">
-                <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
+            <a href="<?php echo e($url); ?>" class="button button__pink" target="<?php echo e($target); ?>">
+              <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
 
-              </a>
-            <?php endif; ?>
+            </a>
           </div>
           <div class="logo-home-top d-xl-none d-lg-none d-md-none">
             <?php if( the_custom_logo() != 0 ): ?>
@@ -65,12 +68,12 @@
               <?php echo e(the_custom_logo()); ?>
 
             <?php endif; ?>
-            <?php if(get_field('boton_comprar_entradas', 'option')): ?>
-              <a href="<?php echo e(get_field('boton_comprar_entradas', 'option')); ?>" class="button button__pink d-md-none d-lg-none d-xl-none">
-                <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
 
-              </a>
-            <?php endif; ?>
+            <a href="<?php echo e($url); ?>" class="button button__pink d-md-none d-lg-none d-xl-none" target="<?php echo e($target); ?>">
+              <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
+
+            </a>
+
           </div>
           <div class="col-12 col-md-10">
             <div class="row justify-content-center row-countdown" countdown data-date="Mar 01 2019 21:30:00">
@@ -110,12 +113,10 @@
 
   <?php endif; ?>
   
-  <?php if(get_field('boton_comprar_entradas', 'option')): ?>
-    <a href="<?php echo e(get_field('boton_comprar_entradas', 'option')); ?>" class="button button__pink">
-      <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
+  <a href="<?php echo e($rul); ?>" class="button button__pink" target="<?php echo e($target); ?>">
+    <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
 
-    </a>
-  <?php endif; ?>
+  </a>
   
   <div class="box-social">
     <?php if(get_field('instagram', 'option')): ?>

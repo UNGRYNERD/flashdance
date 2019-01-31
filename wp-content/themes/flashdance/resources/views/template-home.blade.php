@@ -4,6 +4,13 @@
 
 @extends('layouts.app')
 
+@php $tipo = get_field('tipo_pagina_entradas', 'option'); print_r($tipo); @endphp
+@if( $tipo == 'url' )
+  @php $url = get_field('boton_comprar_entradas', 'option'); $target = '_blank'; @endphp
+@elseif ( $tipo == 'pag' )
+  @php $url = get_permalink(get_field('pagina_entradas', 'option')); $target = '_self';  @endphp
+@endif
+
 @section('content')
   @while(have_posts()) @php the_post() @endphp
     @php $bloques = get_field('anadir_bloques'); @endphp
@@ -26,7 +33,9 @@
                     </div>
                   @endif
                   @if($item['titulo_boton'])
-                    <a href="{{ $item['url_externa']}}" class="button button__pink" target="_blank">{{ $item['titulo_boton'] }}</a>
+                    <a href="{{ $url }}" class="button button__pink" target="{{ $target }}">
+                      {{ $item['titulo_boton'] }}
+                    </a>
                   @endif
                 </div>
               </div>

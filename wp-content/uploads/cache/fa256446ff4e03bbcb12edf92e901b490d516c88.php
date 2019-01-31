@@ -1,3 +1,10 @@
+<?php $tipo = get_field('tipo_pagina_entradas', 'option'); print_r($tipo); ?>
+<?php if( $tipo == 'url' ): ?>
+  <?php $url = get_field('boton_comprar_entradas', 'option'); $target = '_blank'; ?>
+<?php elseif( $tipo == 'pag' ): ?>
+  <?php $url = get_permalink(get_field('pagina_entradas', 'option')); $target = '_self';  ?>
+<?php endif; ?>
+
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
     <?php $bloques = get_field('anadir_bloques'); ?>
@@ -20,7 +27,10 @@
                     </div>
                   <?php endif; ?>
                   <?php if($item['titulo_boton']): ?>
-                    <a href="<?php echo e($item['url_externa']); ?>" class="button button__pink" target="_blank"><?php echo e($item['titulo_boton']); ?></a>
+                    <a href="<?php echo e($url); ?>" class="button button__pink" target="<?php echo e($target); ?>">
+                      <?php echo e($item['titulo_boton']); ?>
+
+                    </a>
                   <?php endif; ?>
                 </div>
               </div>

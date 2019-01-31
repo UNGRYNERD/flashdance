@@ -1,3 +1,10 @@
+@php $tipo = get_field('tipo_pagina_entradas', 'option'); print_r($tipo); @endphp
+@if( $tipo == 'url' )
+  @php $url = get_field('boton_comprar_entradas', 'option'); $target = '_blank'; @endphp
+@elseif ( $tipo == 'pag' )
+  @php $url = get_permalink(get_field('pagina_entradas', 'option')); $target = '_self';  @endphp
+@endif
+
 <header class="header-banner">
   <div class="container">    
     <div class="row justify-content-between">
@@ -17,11 +24,9 @@
           @endif
         </div>
         <div class="col-md-4 text-right d-none d-lg-block">
-          @if(get_field('boton_comprar_entradas', 'option'))
-            <a href="{{get_field('boton_comprar_entradas', 'option')}}" class="button button__pink">
-              {{get_field('texto_boton_comprar', 'option')}}
-            </a>
-          @endif
+          <a href="{{ $url }}" class="button button__pink" target="{{ $target }}">
+            {{get_field('texto_boton_comprar', 'option')}}
+          </a>
         </div>
       @else
         <div class="col-2">
@@ -35,11 +40,9 @@
         </div>
         <div class="col-10 text-right">
           <div class="d-none d-md-block d-lg-block d-xl-block">
-            @if(get_field('boton_comprar_entradas', 'option'))
-              <a href="{{ get_field('boton_comprar_entradas', 'option') }}" class="button button__pink">
-                {{get_field('texto_boton_comprar', 'option')}}
-              </a>
-            @endif
+            <a href="{{ $url }}" class="button button__pink" target="{{ $target }}">
+              {{get_field('texto_boton_comprar', 'option')}}
+            </a>
           </div>
           <div class="logo-home-top d-xl-none d-lg-none d-md-none">
             @if ( the_custom_logo() != 0 )
@@ -60,11 +63,11 @@
             @if ( the_custom_logo() != 0 )
               {{ the_custom_logo() }}
             @endif
-            @if(get_field('boton_comprar_entradas', 'option'))
-              <a href="{{ get_field('boton_comprar_entradas', 'option') }}" class="button button__pink d-md-none d-lg-none d-xl-none">
-                {{get_field('texto_boton_comprar', 'option')}}
-              </a>
-            @endif
+
+            <a href="{{ $url }}" class="button button__pink d-md-none d-lg-none d-xl-none" target="{{ $target }}">
+              {{get_field('texto_boton_comprar', 'option')}}
+            </a>
+
           </div>
           <div class="col-12 col-md-10">
             <div class="row justify-content-center row-countdown" countdown data-date="Mar 01 2019 21:30:00">
@@ -103,11 +106,9 @@
     {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']) !!}
   @endif
   
-  @if(get_field('boton_comprar_entradas', 'option'))
-    <a href="{{get_field('boton_comprar_entradas', 'option')}}" class="button button__pink">
-      {{get_field('texto_boton_comprar', 'option')}}
-    </a>
-  @endif
+  <a href="{{ $rul }}" class="button button__pink" target="{{ $target }}">
+    {{get_field('texto_boton_comprar', 'option')}}
+  </a>
   
   <div class="box-social">
     @if(get_field('instagram', 'option'))
