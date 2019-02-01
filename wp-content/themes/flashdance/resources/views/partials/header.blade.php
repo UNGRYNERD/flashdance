@@ -1,4 +1,4 @@
-@php $tipo = get_field('tipo_pagina_entradas', 'option'); print_r($tipo); @endphp
+@php $tipo = get_field('tipo_pagina_entradas', 'option'); @endphp
 @if( $tipo == 'url' )
   @php $url = get_field('boton_comprar_entradas', 'option'); $target = '_blank'; @endphp
 @elseif ( $tipo == 'pag' )
@@ -106,7 +106,7 @@
     {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']) !!}
   @endif
   
-  <a href="{{ $rul }}" class="button button__pink" target="{{ $target }}">
+  <a href="{{ $url }}" class="button button__pink" target="{{ $target }}">
     {{get_field('texto_boton_comprar', 'option')}}
   </a>
   

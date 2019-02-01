@@ -4,7 +4,7 @@
 
 @extends('layouts.app')
 
-@php $tipo = get_field('tipo_pagina_entradas', 'option'); print_r($tipo); @endphp
+@php $tipo = get_field('tipo_pagina_entradas', 'option'); @endphp
 @if( $tipo == 'url' )
   @php $url = get_field('boton_comprar_entradas', 'option'); $target = '_blank'; @endphp
 @elseif ( $tipo == 'pag' )
