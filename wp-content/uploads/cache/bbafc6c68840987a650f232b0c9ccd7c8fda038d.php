@@ -1,4 +1,4 @@
-<?php $tipo = get_field('tipo_pagina_entradas', 'option'); print_r($tipo); ?>
+<?php $tipo = get_field('tipo_pagina_entradas', 'option'); ?>
 <?php if( $tipo == 'url' ): ?>
   <?php $url = get_field('boton_comprar_entradas', 'option'); $target = '_blank'; ?>
 <?php elseif( $tipo == 'pag' ): ?>
@@ -113,7 +113,7 @@
 
   <?php endif; ?>
   
-  <a href="<?php echo e($rul); ?>" class="button button__pink" target="<?php echo e($target); ?>">
+  <a href="<?php echo e($url); ?>" class="button button__pink" target="<?php echo e($target); ?>">
     <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
 
   </a>
