@@ -63,8 +63,8 @@
             'meta_query' => array(
               array(
                 'key' => 'puesto',
-                'value' => 'elenco',
-                'compare' => 'NOT LIKE',
+                'value' => 'equipo',
+                'compare' => 'LIKE',
               )
             )
           );
@@ -84,6 +84,51 @@
                     </p>
                   </div>
                 </a>
+              </div>
+          @endwhile
+          @else
+            {{ __('Lo sentimos pero no hay resultados.', 'sage') }}
+        @endif
+        @php wp_reset_query() @endphp
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+       <div class="col-12">
+         <h2 class="title__primary">{{ get_field('titulo_colaboradores') }}</h2>
+       </div>
+        <?php 
+          $args = array(
+            'post_type' => 'elenco',
+            'posts_per_page' => -1,
+            'meta_query' => array(
+              array(
+                'key' => 'puesto',
+                'value' => 'colab',
+                'compare' => 'LIKE',
+              )
+            )
+          );
+
+          query_posts($args);  
+        ?>
+        @if(have_posts())
+          @while(have_posts())
+            @php the_post(); $elencoID = get_the_ID($post); @endphp
+              <div class="col-12 col-md-3">
+                <a data-target="#team-{{$elencoID}}" href="#team-{{$elencoID}}" class="team-elenco team-ajax" data-id="{{$elencoID}}">
+                    @if(has_post_thumbnail())
+                      @php the_post_thumbnail('large') @endphp
+                    @endif
+                    <div class="box-info">
+                      <p>{{ the_title() }}
+                        @if(get_field('subtitulo'))
+                          <span>{{ get_field('subtitulo') }}</span>
+                        @endif
+                      </p>
+                    </div>
+                  </a>
               </div>
           @endwhile
           @else

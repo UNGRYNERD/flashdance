@@ -70,24 +70,29 @@
 
           </div>
           <div class="col-12 col-md-10">
-            <div class="row justify-content-center row-countdown" countdown data-date="Mar 01 2019 21:30:00">
-              <div class="col-md-2 col-auto">
-                <span data-days>0</span>
-                <p>dias</p>
+            @php $pageID = get_option('page_on_front'); print_r($pageID) @endphp
+
+            @if ( !has_post_thumbnail($pageID) )
+              <div class="row justify-content-center row-countdown" countdown data-date="Mar 01 2019 21:30:00">
+                <div class="col-md-2 col-auto">
+                  <span data-days>0</span>
+                  <p>dias</p>
+                </div>
+                <div class="col-md-2 col-auto">
+                  <span data-hours>0</span>
+                  <p>horas</p>
+                </div>
+                <div class="col-md-2 col-auto">
+                  <span data-minutes>0</span>
+                  <p>minutos</p>
+                </div>
+                <div class="col-md-2 col-auto">
+                  <span data-seconds>0</span>
+                  <p>segundos</p>
+                </div>
               </div>
-              <div class="col-md-2 col-auto">
-                <span data-hours>0</span>
-                <p>horas</p>
-              </div>
-              <div class="col-md-2 col-auto">
-                <span data-minutes>0</span>
-                <p>minutos</p>
-              </div>
-              <div class="col-md-2 col-auto">
-                <span data-seconds>0</span>
-                <p>segundos</p>
-              </div>
-            </div>
+            @endif
+
           </div>
         </div>
       </div> 

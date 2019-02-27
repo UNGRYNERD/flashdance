@@ -1,4 +1,16 @@
 //HOME
+.post_thumbnail_home {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -330px;
+
+  @media (max-width: 767px) {
+    margin-top: -200px;
+  }
+}
+
 .box-video {
   margin-top: -61px;
   padding: 140px 0;
@@ -533,10 +545,19 @@
 .box-elenco {
   background-color: #fff;
   margin-bottom: 60px;
-  
-  .container:nth-child(2):after {
-    display: none;
+
+  .container {
+    margin-bottom: 60px;
+
+    &::after {
+      display: none;
+    }
+
+    &:nth-child(1):after {
+      display: block;
+    }
   }
+
   
   .team-elenco {
     position: relative;

@@ -7,6 +7,13 @@
 
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
+
+    <?php if( has_post_thumbnail() ): ?>
+      <div class="post_thumbnail_home">
+        <?php the_post_thumbnail('full') ?>
+      </div>
+    <?php endif; ?> 
+
     <?php $bloques = get_field('anadir_bloques'); ?>
     
     <?php if($bloques): ?>

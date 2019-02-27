@@ -13,6 +13,13 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
+
+    @if ( has_post_thumbnail() )
+      <div class="post_thumbnail_home">
+        @php the_post_thumbnail('full') @endphp
+      </div>
+    @endif 
+
     @php $bloques = get_field('anadir_bloques'); @endphp
     
     @if($bloques)
