@@ -5,7 +5,7 @@
 .ig-page-header .ig-logo {
 	float: left;
 	margin-right: 20px;
-	max-height: 55px;
+	max-height: 35px;
 }
 
 
@@ -183,6 +183,101 @@
 	width: 50px;
     height: 26px;
 }
+.igf-response {
+    font-size: 16px;
+    color: #e93b59;
+	padding: 5px;
+}
+/* ******** ig account setting  ********** */
+.ig-account-section {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    background: #fff;
+    padding: 10px;
+}
+.ig-account-section .notice p {
+    color: #e93b59;
+	font-size: 14px;
+}
+.ig-account-cards .ig-account-card {
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    -webkit-transition: .3s;
+    transition: .3s;
+    flex-basis: 350px;
+    word-break: break-word;
+}
+.ig-ac-have-token .ig-account-card:first-child {
+	flex-basis: auto;
+}
+.ig-ac-have-token .ig-account-card figure {
+    text-align: center;
+}
+.ig-account-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+.ig-account-cards form h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.ig-account-cards .ig-account-card:hover {
+    background: #eee;
+}
+.ig-account-cards form input[type="text"] {
+    width: 100%;
+}
+#ig-remove-token {
+    display: none;
+}
+
+/* ******** ig docs page  ********** */
+.ig-doc-header {
+    background: #fff;
+    padding: 1px 10px 5px 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.ig-doc-body article {
+    background: #fff;
+    padding: 1px 10px 5px 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    -webkit-transition: .3s;
+    transition: .3s;	
+}
+.ig-doc-body article:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+input.ig-doc-red-url {
+    cursor: copy;
+    min-width: 650px;
+    color: #e93b59;
+}
+.ig-doc-body figure img, .ig-doc-figure {
+    border: 1px solid #e93b59;
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.2);
+}
+#TB_window figure.ig-doc-figure {
+    margin: auto;
+    display: inline-block;
+}
+.ig-doc-body article table th {
+    text-align: left;
+}
+.ig-doc-body article table th,.ig-doc-body article table td {
+    padding: 3px 5px;
+    border: 1px solid #ddd;
+}
+.ig-doc-body article table {
+    border-collapse: collapse;
+}
+
+
 /* ******** ig advance setting  ********** */
 .ig_adv-setting-toggle{
 	cursor: pointer;
@@ -192,11 +287,6 @@
 .ig_adv-setting-toggle.active .dashicons-minus{display: initial;}
 .ig_adv-setting-toggle.active .dashicons-plus{display: none;}
 .ig_adv-setting{display: none;}
-.ig_adv-setting-fmsg {
-    font-size: 20px;
-    color: #e93b59;
-    padding: 5px 10px;
-}
 .ig_adv-setting input[type="url"] {
     min-width: 75%;
 }
@@ -221,10 +311,6 @@
 @-moz-keyframes igspin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes igspin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes igspin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
-.no-igs_experiments .igs_experimental{
-	display: none;
-}
 
 /* ******** paypal btn ********** */
 .ig_donation-wrap {

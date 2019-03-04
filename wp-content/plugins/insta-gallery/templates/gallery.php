@@ -35,10 +35,19 @@ $igs_frontend = array(
 $i = 1;
 foreach ($instaItems as $item) {
     
-    $img_src = ($IGItem['insta_gal-cols'] == 1) ? $item['img_standard'] : ((($IGItem['insta_gal-cols'] > 9) || ($IGItem['insta_thumb-size'] == 'small')) ? $item['img_thumb'] : $item['img_low']);
+	$img_src = $item['img_standard'];
+	if($IGItem['insta_thumb-size'] == 'small'){
+			$img_src = $item['img_thumb'];
+	}
+	if($IGItem['insta_thumb-size'] == 'medium'){
+			$img_src = $item['img_low'];
+	}		
     $hovered = $IGItem['insta_gal-hover'] ? 'ighover' : '';
     $spacing = $IGItem['insta_gal-spacing'] ? '' : 'no-spacing';
     $link = $iplink = 'https://www.instagram.com/p/' . $item['code'] . '/';
+    if(!empty($item['link'])){
+        $link = $iplink = $item['link'];
+    }
     if ($IGItem['insta_gal-popup']) {
         $link = $item['img_standard'];
     }

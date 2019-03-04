@@ -8,7 +8,8 @@ $InstaGallerySetting = get_option('insta_gallery_setting');
 ?>
 
 <p>
-	<a href="<?php echo INSGALLERY_URL_ADMIN_PAGE; ?>&tab=edit" title="<?php _e('Add New Gallery','insta-gallery'); ?>" class="ig-btn"><span class="dashicons dashicons-plus"></span><?php _e('Add New Gallery','insta-gallery'); ?></a>
+	<a href="<?php echo INSGALLERY_URL_ADMIN_PAGE; ?>&tab=edit" title="<?php _e('Add New Gallery','insta-gallery'); ?>" class="ig-btn"><span
+		class="dashicons dashicons-plus"></span><?php _e('Add New Gallery','insta-gallery'); ?></a>
 </p>
 
 
@@ -37,9 +38,10 @@ $InstaGallerySetting = get_option('insta_gallery_setting');
         }
         ?>
 			</td>
-				<td><input type="text" onclick="select()" value='[insta-gallery id="<?php echo $k; ?>"]' readonly /> </td>
+				<td><input type="text" onclick="select()" value='[insta-gallery id="<?php echo $k; ?>"]' readonly /></td>
 				<td><a href="<?php echo INSGALLERY_URL_ADMIN_PAGE; ?>&tab=edit&ig_item=<?php echo $k; ?>" class="ig-btn"><span class="dashicons dashicons-edit"></span><?php _e('Edit','insta-gallery'); ?> </a>
-					<a href="<?php echo INSGALLERY_URL_ADMIN_PAGE; ?>&ig_item_delete=<?php echo $k; ?>" class="ig-btn" onclick="return ig_item_delete();"><span class="dashicons dashicons-trash"></span><?php _e('Delete','insta-gallery'); ?></a></td>
+					<a href="<?php echo INSGALLERY_URL_ADMIN_PAGE; ?>&ig_item_delete=<?php echo $k; ?>" class="ig-btn" onclick="return ig_item_delete();"><span
+						class="dashicons dashicons-trash"></span><?php _e('Delete','insta-gallery'); ?></a></td>
 			</tr>
 		<?php } unset($i); ?>
 	</tbody>
@@ -73,8 +75,8 @@ $InstaGallerySetting = get_option('insta_gallery_setting');
     ?>
 						<input type="hidden" name="igs_spinner_image_id" value="<?php echo $mid; ?>" data-misrc="<?php echo $misrc; ?>" />
 							<button type='button' class="ig-btn" id="igs-spinner_media_manager" /><?php _e('Update Spinner','insta-gallery'); ?></button>
-							<button type='button' class="ig-btn" id="igs-spinner_reset" /><?php _e('Reset Spinner','insta-gallery'); ?></button> <br />
-						<span class="description">
+							<button type='button' class="ig-btn" id="igs-spinner_reset" /><?php _e('Reset Spinner','insta-gallery'); ?></button> <br /> <span
+							class="description">
 							<?php
     _e('please select the image from media to replace with default Gallery loader icon.', 'insta-gallery');
     ?> </span>
@@ -82,8 +84,8 @@ $InstaGallerySetting = get_option('insta_gallery_setting');
 						</td>
 						<td rowspan="2">
 							<div class="ig-spinner">
-								<svg version="1.1" class="ig-spin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 551.034 551.034"
-									style="enable-background: new 0 0 551.034 551.034;" xml:space="preserve">
+								<svg version="1.1" class="ig-spin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									viewBox="0 0 551.034 551.034" style="enable-background: new 0 0 551.034 551.034;" xml:space="preserve">
             						<g>
                                 		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="275.517" y1="4.57" x2="275.517" y2="549.72"
 										gradientTransform="matrix(1 0 0 -1 0 554)">
@@ -124,29 +126,26 @@ $InstaGallerySetting = get_option('insta_gallery_setting');
 					</tr>
 					<tr>
 						<th><?php _e('Remove everything on uninstall','insta-gallery'); ?>:</th>
-						<td><input type="checkbox" name="igs_flush" value="1" onclick="ig_validate_flush(this)" <?php if(!empty($InstaGallerySetting['igs_flush'])) echo 'checked';?> /><span
-							class="description"> <?php _e('check this box to remove all data related to this plugin when removing the plugin.','insta-gallery'); ?> </span></td>
-					</tr>
-					<tr>
-						<th><?php _e('Developer Mode','insta-gallery'); ?>:</th>
-						<td><input type="checkbox" name="igs_dev_mode" value="1" <?php if(!empty($InstaGallerySetting['igs_dev_mode'])) echo 'checked';?> /><span
-							class="description"> <?php _e('check this box to enable experimental features of the plugin.','insta-gallery'); ?> </span></td>
+						<td><input type="checkbox" name="igs_flush" value="1" onclick="ig_validate_flush(this)"
+							<?php if(!empty($InstaGallerySetting['igs_flush'])) echo 'checked';?> /><span class="description"> <?php _e('check this box to remove all data related to this plugin when removing the plugin.','insta-gallery'); ?> </span></td>
 					</tr>
 				</tbody>
 				<tfoot>
 					<tr>
-						<td colspan="3"><button type="submit" class="ig-btn"><?php _e('Update','insta-gallery'); ?></button> <span class="ig_adv-setting-fmsg"></span></td>
+						<td colspan="3"><button type="submit" class="ig-btn"><?php _e('Update','insta-gallery'); ?></button> <span class="igf-response"></span></td>
 					</tr>
 				</tfoot>
 			</table>
-			<input type="hidden" name="igadvs_nonce" value="<?php echo wp_create_nonce( 'igadvs_nonce_key' ); ?>" /> <input type="hidden" name="action" value="save_igadvs" />
+			<input type="hidden" name="ig_nonce" value="<?php echo wp_create_nonce( 'igfreq_nonce_key' ); ?>" /> <input type="hidden" name="action"
+				value="save_igadvs" />
 		</form>
 	</div>
 </div>
 <div class="ig_donation-wrap ig-thm-color">
-	<p><span class="ig_donation_text"><?php _e('Please Donate now to support the Maintainance and Advancement of this plugin.','insta-gallery'); ?>
-	<br /><?php _e('Thank you so much to each and everyone who has already supported me.','insta-gallery'); ?></span>
-		 <a class="ig_donation_btn" href="https://www.paypal.me/karanpay" target="blank"><?php _e('Donate','insta-gallery'); ?>
+	<p>
+		<span class="ig_donation_text"><?php _e('Please Donate now to support the Maintainance and Advancement of this plugin.','insta-gallery'); ?>
+	<br /><?php _e('Thank you so much to each and everyone who has already supported me.','insta-gallery'); ?></span> <a class="ig_donation_btn"
+			href="https://www.paypal.me/karanpay" target="blank"><?php _e('Donate','insta-gallery'); ?>
 			<img src="<?php echo INSGALLERY_URL; ?>/assets/media/paypal-logo.svg" class="ig-logo" /> </a>
 	</p>
 </div>
@@ -195,20 +194,19 @@ jQuery(function($){
     $('.ig_adv-setting form').on('submit',function(ev){
     	ev.preventDefault();
     	$f = $(this);
+    	var $fresponse = $f.find('.igf-response');
     	jQuery.ajax({
 			url : ajaxurl,
 			type : 'post',
             dataType: 'JSON',
 			data : $f.serialize(),
 			beforeSend : function()
-			{				
+			{
+				$fresponse.empty();
 			},
 			success : function( response ) {
 				if ((typeof response === 'object') && response.hasOwnProperty('success')) {
-					$('.ig_adv-setting-fmsg').html(response.data);
-                    setTimeout(function(){
-                        $('.ig_adv-setting-fmsg').empty();
-                    },2000);
+					$fresponse.html(response.data);
                 }
 			}
 		}).fail(function (jqXHR, textStatus) {
