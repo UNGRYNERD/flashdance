@@ -4,7 +4,7 @@ Tags: instagram, instagram feed, instagram widget, gallery, gallery widget, pict
 Requires at least: 3.8.0
 Requires PHP: 5.3
 Tested up to: 5.0
-Stable tag: 2.1.5
+Stable tag: 1.6.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://www.paypal.me/karanpay
@@ -14,9 +14,8 @@ Instagram Gallery is an easy way to display your Instagram pictures on the websi
 == Description ==
 
 Easy and simple way to display your Instagram images on the website.
-Display pictures from your Instagram account as Gallery or as Carousel Slider. just paste your Instagram Access Token, configure gallery settings and your pictures will be on the website.
-
-**Note:** plugin version 2.x is a major update and it requires Instagram access token to display user media, if you are using version 1.x then please backup plugin files before update, it will help you downgrade if there is any issue with latest update.
+Display pictures from Instagram account as Gallery or as Carousel Slider. There is no need to configure APIs or login anywhere, just paste your Instagram Username or Tagname and configure your settings.
+it's a game of few seconds and your pictures will be on the website.
 
 **Demo:** you can see demo [Here](https://www.karansingh.ml/public/demo/insta-gallery/) or check 'screenshots' section below.
 
@@ -43,7 +42,11 @@ Upload and install in the same way you'd install any other plugin OR see [HERE](
 
 = Why my pictures are not showing on page? =
 
-you have to update valid Instagram access token to display user media.
+profile needs to be publicly visible to show pictures.
+
+= Can i add same Shortcode twice on a page? =
+
+Yes, but sometimes it can conflicts with each other. So, try to create new gallery with same setting and add them.
 
 = Can i display pictures by using Tagname? =
 
@@ -55,7 +58,7 @@ goto to plugin panel and add new gallery, then goto widgets, add Instagram Galle
 
 = Why there are two popups on image click? =
 
-there may be some other plugins(like: fancybox, elementor) which also uses image links to open popup. try to disable popup images option in the setting panel of this plugin, which will allow other plugins to work.
+there may be some other plugins(like: fancybox) which also uses image links to open popup. try to disable popup images option in the setting panel of this plugin, which will allow other plugins to work.
 
 = Error: No working transports found =
 
@@ -70,43 +73,24 @@ this error visible sometimes in PHP 7+ installations due to the missing CURL ext
 5. Gallery Widget
 
 == Changelog ==
-= 2.1.5 =
-* Fixed: carousel image links
-* Fixed: gallery image alignment
-
-= 2.1.4 =
-* thumbnail sizes updated
-
-= 2.1.3 =
-* small content update
-
-= 2.1.2 =
-* security fixes
-
-= 2.1.1 =
-* major update with lots-of changes
-* Instagram API support added
-* Access Token is required to display profile media
-* pictures limit increased
-
 = 1.6.6 =
-* code bug fixed 
+code bug fixed 
 
 = 1.6.5 =
-* JS files issue with WP5 solved 
+JS files issue with WP5 solved 
 
 = 1.6.4 =
-* speed improvements and small changes
+speed improvements and small changes
 
 = 1.6.3 =
-* added Carousel autoplay time option
-* Carousel dotted nav removed
-* Carousel removed zoom image on hover
+added Carousel autoplay time option
+Carousel dotted nav removed
+Carousel removed zoom image on hover
 
 = 1.6.2 =
-* elementor confliction fixed
-* code optimised
-* IE 8,9 Carousel support dropped
+elementor confliction fixed
+code optimised
+IE 8,9 Carousel support dropped
 
 = 1.6.1 =
 * Spanish Translation added
@@ -230,21 +214,6 @@ this error visible sometimes in PHP 7+ installations due to the missing CURL ext
 
 
 == Upgrade Notice ==
-= 2.1.5 =
-Carousel links issue solved
-
-= 2.1.4 =
-updated thumbnail sizes
-
-= 2.1.3 =
-plugin info updated
-
-= 2.1.2 =
-added security fixes
-
-= 2.1.1 =
-major update, please backup plugin files before update
-
 = 1.6.6 =
 coding issue solved
 

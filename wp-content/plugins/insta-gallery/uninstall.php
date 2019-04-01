@@ -9,7 +9,6 @@ function insgal_delete_plugin() {
 	if(!empty($InstaGallerySetting['igs_flush'])){
 	   delete_option( 'insta_gallery_setting' );
 	   delete_option( 'insta_gallery_items' );
-	   delete_option( 'insta_gallery_iac' );
 	}
 }
 insgal_delete_plugin();

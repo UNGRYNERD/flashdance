@@ -15,7 +15,7 @@ if (! defined('ABSPATH')) {
  * session_start();
  * });
  */
- 
+
 // load template files
 function insgal_template_path($template_name)
 {
@@ -68,6 +68,7 @@ function insgal_enqueue_scripts()
     wp_enqueue_script('swiper');
     wp_enqueue_script('magnific-popup');
 }
+include_once (INSGALLERY_PATH . 'app/Libra/InstagramSpider.php');
 
 // shortcode added
 add_shortcode('insta-gallery', 'insta_gallery');
@@ -177,7 +178,7 @@ function load_ig_item()
     }
     $IGItem = $InstaGalleryItems[$gid];
     $IGItem['gid'] = $gid; // push gallery ID for later use
-    global $insgalleryIAC,$iispi;
+    $igs = new InstagramSpider();
     
     // validating options
     if (empty($IGItem['ig_select_from'])) {
@@ -191,6 +192,7 @@ function load_ig_item()
         $IGItem['insta_user-limit'] = (int) $IGItem['insta_user-limit'];
         $IGItem['insta_tag-limit'] = (int) $IGItem['insta_tag-limit'];
     }
+    $IGItem['insta_tag-userid'] = filter_var($IGItem['insta_tag-userid'], FILTER_VALIDATE_INT);
     $IGItem['insta_gal-hover'] = filter_var($IGItem['insta_gal-hover'], FILTER_VALIDATE_BOOLEAN);
     $IGItem['insta_gal-spacing'] = filter_var($IGItem['insta_gal-spacing'], FILTER_VALIDATE_BOOLEAN);
     
@@ -216,9 +218,70 @@ function load_ig_item()
     $results = '';
     $instaItems = '';
     if ($IGItem['ig_select_from'] == 'username') { // get from username
-        $instaItems = igf_getUserItems($IGItem);
+        if (! empty($IGItem['insta_user'])) { // valid Instagram Username
+            $tk = 'instagallery_user_' . $IGItem['insta_user']; // transient key            
+            $tkart = $tk . '_artimeout'; // transient key admin request timeout
+            if (current_user_can('administrator') && (false === get_transient($tkart))) {
+                
+                $instaItems = $igs->getUserItems($IGItem['insta_user']);
+                if (! empty($instaItems)) {
+                    set_transient($tk, $instaItems, 2 * HOUR_IN_SECONDS);
+                    set_transient($tkart, true, 5 * MINUTE_IN_SECONDS);
+                }
+            } else {
+                // Get any existing copy of our transient data
+                if (false === ($instaItems = get_transient($tk))) {
+                    $instaItems = $igs->getUserItems($IGItem['insta_user']);
+                    if (! empty($instaItems)) {
+                        set_transient($tk, $instaItems, 2 * HOUR_IN_SECONDS);
+                    }
+                }
+            }
+            
+            // retry again if no results
+            if (empty($instaItems)) {
+                $instaItems = $igs->getUserItems($IGItem['insta_user']);
+                if (! empty($instaItems)) {
+                    set_transient($tk, $instaItems, 2 * HOUR_IN_SECONDS);
+                }
+            }
+        }
     } else { // continue to tag
-        $instaItems = igf_getTagItems($IGItem);
+        if (! empty($IGItem['insta_tag'])) { // valid Instagram Tag;
+            $tk = 'instagallery_tag_' . $IGItem['insta_tag']; // transient key
+            $tkart = $tk . '_artimeout'; // transient key admin request timeout
+            if (current_user_can('administrator') && (false === get_transient($tkart))) {
+                $instaItems = $igs->getTagItems($IGItem['insta_tag'],$IGItem['insta_tag-userid']);
+                if (! empty($instaItems)) {
+                    set_transient($tk, $instaItems, 2 * HOUR_IN_SECONDS);
+                    set_transient($tkart, true, 5 * MINUTE_IN_SECONDS);
+                }
+            } else {
+                // Get any existing copy of our transient data
+                if (false === ($instaItems = get_transient($tk))) {
+                    $instaItems = $igs->getTagItems($IGItem['insta_tag'],$IGItem['insta_tag-userid']);
+                    if (! empty($instaItems)) {
+                        set_transient($tk, $instaItems, 2 * HOUR_IN_SECONDS);
+                    }
+                }
+            }
+            // retry again if no results
+            if (empty($instaItems)) {
+                $instaItems = $igs->getTagItems($IGItem['insta_tag'],$IGItem['insta_tag-userid']);
+                if (! empty($instaItems)) {
+                    set_transient($tk, $instaItems, 2 * HOUR_IN_SECONDS);
+                }
+            }
+            // filter by user ID
+            if (! empty($IGItem['insta_tag-userid'])) {
+                foreach ($instaItems as $k => $item) {
+                    if(!empty($item['owner_id']) && ($item['owner_id'] != $IGItem['insta_tag-userid'])){
+                        unset($instaItems[$k]);
+                    }
+                }
+                $instaItems = array_values($instaItems);
+            }
+        }
     }
     
     if (! empty($instaItems)) {
@@ -293,14 +356,15 @@ function load_ig_item()
         }
     } else {
         if (current_user_can('administrator')) {
-            $results .= '<div class="ig-no-items-msg"><p class="ig_front_msg-color"><strong>Admin Notice:</strong> unable to get results.</p>';
+            $results .= '<div class="ig-no-items-msg"><p class="ig_front_msg-color"><strong>Admin Notice:</strong> unable to get results. possible reasons:</p>';
             $results .= '<ul>';
-            if(($IGItem['ig_select_from'] == 'username') && empty($insgalleryIAC['access_token'])){
-                $results .= '<li>' . __('please update Instagram Access Token in plugin setting.', 'insta-gallery') . '</li>';
-            }
-            $igsMsg = $iispi->getMessage();
-            if (! empty($igsMsg)) {
-                $results .= '<li>' . $igsMsg . '</li>';
+            $results .= '<li>' . __('Instagram account may be private or inavalid username/tagname.', 'insta-gallery') . '</li>';
+            $results .= '<li>' . __('network or server side issue.', 'insta-gallery') . '</li>';
+            $igsMsgs = $igs->getMessages();
+            if (! empty($igsMsgs)) {
+                foreach ($igsMsgs as $igsMsg) {
+                    $results .= '<li>' . $igsMsg . '</li>';
+                }
             }
             $results .= '</ul></div>';
         }

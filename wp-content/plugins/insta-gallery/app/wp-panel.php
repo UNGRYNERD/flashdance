@@ -15,13 +15,14 @@ $InstaGallerySetting = get_option('insta_gallery_setting');
 
 $ig_page_msgs = array();
 // add/update gallery item
-if (isset($_POST['ig-form-update']) && isset($_POST['ig_nonce']) && wp_verify_nonce($_POST['ig_nonce'], 'igfreq_nonce_key')) {
+if (isset($_POST['ig-form-update'])) {
     // filtering data
     $POSTDATA = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
     $IGItem = array();
     $IGItem['ig_select_from'] = $POSTDATA['ig_select_from'];
     $IGItem['insta_user'] = (string) $POSTDATA['insta_user'];
     $IGItem['insta_tag'] = (string) $POSTDATA['insta_tag'];
+    $IGItem['insta_tag-userid'] = (int) $POSTDATA['insta_tag-userid'];
     $IGItem['insta_user-limit'] = $POSTDATA['insta_user-limit'];
     $IGItem['insta_tag-limit'] = $POSTDATA['insta_tag-limit'];
     $IGItem['ig_display_type'] = $POSTDATA['ig_display_type'];
@@ -64,8 +65,6 @@ if (isset($_POST['ig-form-update']) && isset($_POST['ig_nonce']) && wp_verify_no
         }
     }
     update_option('insta_gallery_items', $InstaGalleryItems, false);
-    igf_clearTransients('instagallery_user_feed');
-    
     $ig_page_msgs[] = __('Gallery item updated successfully.', 'insta-gallery');
 }
 
@@ -81,10 +80,12 @@ if (isset($_GET['ig_item_delete'])) {
 
 
 ?>
-<div id="ig-page" class="">
+<div id="ig-page" class="<?php if(empty($InstaGallerySetting['igs_dev_mode'])){echo 'no-igs_experiments';}?>">
 	<div class="wrap">
 		<header class="ig-page-header">
+			<img src="<?php echo INSGALLERY_URL; ?>/assets/media/icon-128x128.jpg" class="ig-logo" />
 			<h3><?php _e('Instagram Gallery','insta-gallery'); ?></h3>
+			<p><?php _e('easy way to display Instagram pictures on the website.','insta-gallery'); ?></p>
 		</header>
 		<hr />
 		<div class="ig-page-content">
@@ -95,21 +96,17 @@ if (! empty($ig_page_msgs)) {
     }
 }
 ?>
-<?php
+			<?php
 if (isset($_GET['tab']) && ! empty($_GET['tab'])) {
     $tab = (string) $_GET['tab'];
     switch ($tab) {
         case 'edit':
             include 'views/edit.php';
             break;
-        case 'documentation':
-            include 'views/documentation.php';
-            break;
         default:
             break;
     }
 } else {
-    include 'views/account.php';
     include 'views/list.php';
 }
 ?>
