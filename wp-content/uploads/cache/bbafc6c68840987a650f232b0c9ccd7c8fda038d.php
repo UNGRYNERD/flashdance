@@ -25,7 +25,7 @@
           <?php endif; ?>
         </div>
         <div class="col-md-4 text-right d-none d-lg-block">
-          <a href="<?php echo e($url); ?>" class="button button__pink" target="<?php echo e($target); ?>">
+          <a href="<?php echo e($url); ?>" class="button-flashdance" target="<?php echo e($target); ?>">
             <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
 
           </a>
@@ -42,7 +42,7 @@
         </div>
         <div class="col-10 text-right">
           <div class="d-none d-md-block d-lg-block d-xl-block">
-            <a href="<?php echo e($url); ?>" class="button button__pink" target="<?php echo e($target); ?>">
+            <a href="<?php echo e($url); ?>" class="button-flashdance" target="<?php echo e($target); ?>">
               <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
 
             </a>
@@ -69,7 +69,7 @@
 
             <?php endif; ?>
 
-            <a href="<?php echo e($url); ?>" class="button button__pink d-md-none d-lg-none d-xl-none" target="<?php echo e($target); ?>">
+            <a href="<?php echo e($url); ?>" class="button-flashdance d-md-none d-lg-none d-xl-none" target="<?php echo e($target); ?>">
               <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
 
             </a>
@@ -118,7 +118,7 @@
 
   <?php endif; ?>
   
-  <a href="<?php echo e($url); ?>" class="button button__pink" target="<?php echo e($target); ?>">
+  <a href="<?php echo e($url); ?>" class="button-flashdance" target="<?php echo e($target); ?>">
     <?php echo e(get_field('texto_boton_comprar', 'option')); ?>
 
   </a>

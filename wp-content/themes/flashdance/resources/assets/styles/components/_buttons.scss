@@ -4,6 +4,7 @@
   padding: 19px 20px;
   text-transform: uppercase;
   border: 5px solid transparent;
+  border-radius: 0%;
   display: inline-block;
   max-width: 250px;
   width: 100%;
@@ -30,5 +31,24 @@
       color: $primary;
       text-decoration: none;
     }
+  }
+
+  &:focus,
+  &:active,
+  &:focus:active {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.outlinebutton {
+  @extend .button;
+  border: 2px solid $primary;
+  background-color: #fff;
+  color: $primary;
+
+  &:hover {
+    color: $third;
+    background-color: $primary;
   }
 }

@@ -17,3 +17,13 @@
   @extend .btn;
   @extend .btn-secondary;
 }
+
+.flashdanceinput {
+  border: 1px solid $linegrey;
+  border-radius: 0;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: $black;
+  height: 53px;
+}

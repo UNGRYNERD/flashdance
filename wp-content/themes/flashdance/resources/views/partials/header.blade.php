@@ -24,7 +24,7 @@
           @endif
         </div>
         <div class="col-md-4 text-right d-none d-lg-block">
-          <a href="{{ $url }}" class="button button__pink" target="{{ $target }}">
+          <a href="{{ $url }}" class="button-flashdance" target="{{ $target }}">
             {{get_field('texto_boton_comprar', 'option')}}
           </a>
         </div>
@@ -40,7 +40,7 @@
         </div>
         <div class="col-10 text-right">
           <div class="d-none d-md-block d-lg-block d-xl-block">
-            <a href="{{ $url }}" class="button button__pink" target="{{ $target }}">
+            <a href="{{ $url }}" class="button-flashdance" target="{{ $target }}">
               {{get_field('texto_boton_comprar', 'option')}}
             </a>
           </div>
@@ -64,7 +64,7 @@
               {{ the_custom_logo() }}
             @endif
 
-            <a href="{{ $url }}" class="button button__pink d-md-none d-lg-none d-xl-none" target="{{ $target }}">
+            <a href="{{ $url }}" class="button-flashdance d-md-none d-lg-none d-xl-none" target="{{ $target }}">
               {{get_field('texto_boton_comprar', 'option')}}
             </a>
 
@@ -111,7 +111,7 @@
     {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'navbar-nav']) !!}
   @endif
   
-  <a href="{{ $url }}" class="button button__pink" target="{{ $target }}">
+  <a href="{{ $url }}" class="button-flashdance" target="{{ $target }}">
     {{get_field('texto_boton_comprar', 'option')}}
   </a>
   

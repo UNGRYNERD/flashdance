@@ -1,6 +1,6 @@
 <section class="blog-header">
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center justify-content-between">
       <div class="col-auto col-md-10">
         <h1 class="title__primary">
           @if(is_home() || is_singular('post'))
@@ -29,6 +29,21 @@
             </a>
           @endif
         </div>
+      @endif
+      @if( is_woocommerce() )
+        @if( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) )
+        @php $count = WC()->cart->cart_contents_count; @endphp
+          <div class="col-2 text-right">
+            <a href="@php echo esc_url(wc_get_cart_url()); @endphp" class="cart-icon">
+              @if ( $count > 0 )        
+                <span class="cart-contents-count">
+                  @php echo esc_html( $count ); @endphp
+                </span>         
+              @endif
+              <img src="@asset('images/icons/shopping-bag.svg')" alt="cart icon">
+            </a>
+          </div>
+        @endif
       @endif
     </div>
   </div>
