@@ -304,6 +304,10 @@
                 text-transform: lowercase;
               }
 
+              a.added_to_cart.wc-forward {
+                display: block;
+              }
+
               .onsale {
                 color: $primary;
                 background-color: $third;
@@ -609,13 +613,23 @@
         textarea {
           border-color: $red !important;
         }
+      }
 
+      &.woocommerce-validated {
+        input,
+        textarea {
+          border-color: $green !important;
+        }
       }
 
       .selection {
         .select2-selection {
           @extend .flashdanceinput;
           border-color: #fff;
+
+          &__rendered {
+            line-height: 20px;
+          }
 
           &__arrow {
             background-image: url('../images/icons/arrow-down-pink.svg');
@@ -638,6 +652,31 @@
           @extend .button;
           @extend .button__pink;
         }
+      }
+    }
+
+    //LOGIN Y CREAR CUENTA
+    #customer_login {
+      form {
+        border-radius: 0;
+        border: 1px solid $linegrey;
+
+        input[type="checkbox"] {
+          height: auto;
+        }
+
+        button.button {
+          @extend .button;
+          @extend .button__pink;
+        }
+      }
+    }
+
+    form.lost_reset_password {
+      button.button {
+        @extend .button;
+        @extend .button__pink;
+        max-width: max-content;
       }
     }
   }
@@ -706,6 +745,23 @@
       text-transform: lowercase;
       padding: 0;
       line-height: normal;
+    }
+  }
+
+  //RESUMEN COMPRA
+  &.woocommerce-order-received {
+    .woocommerce-customer-details {
+      address {
+        border-radius: 0;
+        border: 1px solid $linegrey;
+        padding: 20px;
+
+        p {
+          &::before {
+            color: $primary;
+          }
+        }
+      }
     }
   }
 }
