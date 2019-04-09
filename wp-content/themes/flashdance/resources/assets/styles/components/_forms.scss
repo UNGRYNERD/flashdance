@@ -19,6 +19,8 @@
 }
 
 .flashdanceinput {
+  -webkit-appearance: none;
+  box-shadow: none;
   border: 1px solid $linegrey;
   border-radius: 0;
   padding: 16px;
@@ -26,4 +28,48 @@
   font-weight: 400;
   color: $black;
   height: 53px;
+}
+
+.selectflash {
+  -webkit-appearance: none;
+  border: 0;
+  border-bottom: 1px solid $linegrey;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: url('../images/icons/arrow-down-pink.svg');
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 33%;
+  padding: 0 16px 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  
+  &:focus,
+  &:active,
+  &:active:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.fakeselect {
+  .select2-selection {
+    @extend .flashdanceinput;
+
+    &__rendered {
+      line-height: 20px;
+    }
+
+    &__arrow {
+      background-image: url('../images/icons/arrow-down-pink.svg');
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+      height: 100%;
+      width: 30px;
+
+      b {
+        display: none;
+      }
+    }
+  }
 }

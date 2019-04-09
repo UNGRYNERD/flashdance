@@ -70,7 +70,7 @@
 
           </div>
           <div class="col-12 col-md-10">
-            @php $pageID = get_option('page_on_front'); print_r($pageID) @endphp
+            @php $pageID = get_option('page_on_front'); @endphp
 
             @if ( !has_post_thumbnail($pageID) )
               <div class="row justify-content-center row-countdown" countdown data-date="Mar 01 2019 21:30:00">
