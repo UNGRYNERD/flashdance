@@ -69,31 +69,30 @@
             </a>
 
           </div>
-          <div class="col-12 col-md-10">
-            @php $pageID = get_option('page_on_front'); @endphp
+          
+          @if ( get_field('activar_cuenta_atras') == 1 )
+            <div class="col-12 col-md-10">
+                <div class="row justify-content-center row-countdown" countdown data-date="{{ get_field('fecha_estreno') }}">
+                  <div class="col-md-2 col-auto">
+                    <span data-days>0</span>
+                  <p>{{ __('dias', 'flashdance') }}</p>
+                  </div>
+                  <div class="col-md-2 col-auto">
+                    <span data-hours>0</span>
+                    <p>{{ __('horas', 'flashdance') }}</p>
+                  </div>
+                  <div class="col-md-2 col-auto">
+                    <span data-minutes>0</span>
+                    <p>{{ __('minutos', 'flashdance') }}</p>
+                  </div>
+                  <div class="col-md-2 col-auto">
+                    <span data-seconds>0</span>
+                    <p>{{ __('segundos', 'flashdance') }}</p>
+                  </div>
+                </div>
+            </div>
+          @endif 
 
-            @if ( !has_post_thumbnail($pageID) )
-              <div class="row justify-content-center row-countdown" countdown data-date="Mar 01 2019 21:30:00">
-                <div class="col-md-2 col-auto">
-                  <span data-days>0</span>
-                  <p>dias</p>
-                </div>
-                <div class="col-md-2 col-auto">
-                  <span data-hours>0</span>
-                  <p>horas</p>
-                </div>
-                <div class="col-md-2 col-auto">
-                  <span data-minutes>0</span>
-                  <p>minutos</p>
-                </div>
-                <div class="col-md-2 col-auto">
-                  <span data-seconds>0</span>
-                  <p>segundos</p>
-                </div>
-              </div>
-            @endif
-
-          </div>
         </div>
       </div> 
     </div>

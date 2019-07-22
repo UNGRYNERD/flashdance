@@ -14,7 +14,7 @@
 @section('content')
   @while(have_posts()) @php the_post() @endphp
 
-    @if ( has_post_thumbnail() )
+    @if ( has_post_thumbnail() && get_field('activar_cuenta_atras') != 1 )
       <div class="post_thumbnail_home">
         @php the_post_thumbnail('full') @endphp
       </div>
