@@ -102,7 +102,7 @@
 
             .coupon {
               display: flex;
-  
+
               #coupon_code {
                 @extend .flashdanceinput;
                 width: auto;
@@ -164,11 +164,11 @@
               @extend .fakeselect;
               text-align: left;
             }
-      
+
             input.input-text {
               @extend .flashdanceinput;
             }
-      
+
             button.button {
               @extend .button;
               @extend .button__pink;
@@ -232,7 +232,7 @@
       }
       .return-to-shop {
         text-align: center;
-        
+
         a.button.wc-backward {
           @extend .button;
           @extend .button__pink;
@@ -318,7 +318,7 @@
                 margin-bottom: 10px;
                 padding: 0 40px;
                 text-transform: capitalize;
-                
+
                 &::before {
                   display: none;
                 }
@@ -364,11 +364,11 @@
         .woocommerce-product-gallery {
           .woocommerce-product-gallery__trigger {
             background-color: transparent;
-    
+
             &::before {
               border: 2px solid $primary;
             }
-    
+
             &::after {
               background: $primary;
             }
@@ -456,7 +456,7 @@
             background-color: $grey;
             transform-origin: top left;
             transform: skewY(-3deg);
-      
+
             @media (max-width: 991px){
               transform: skewY(-1.5deg);
             }
@@ -468,7 +468,7 @@
           }
         }
 
-        //Relacionados 
+        //Relacionados
         .related.products {
           &::before {
             content: "";
@@ -581,7 +581,7 @@
         &::before,
         li::before {
           color: $red;
-        }        
+        }
       }
     }
 
@@ -614,6 +614,11 @@
         @extend .flashdanceinput;
         border-color: #fff;
         font-weight: 700;
+      }
+
+      .woocommerce-invalid #terms[type="checkbox"] {
+        outline: none;
+        outline-offset: none;
       }
 
       textarea {

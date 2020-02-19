@@ -30,6 +30,12 @@
   height: 53px;
 }
 
+input[type="checkbox"],
+.flashdancecheckbox {
+  -webkit-appearance: checkbox !important;
+  padding: 0 !important;
+}
+
 .selectflash {
   -webkit-appearance: none;
   border: 0;
@@ -43,7 +49,7 @@
   padding: 0 16px 16px;
   margin-bottom: 20px;
   width: 100%;
-  
+
   &:focus,
   &:active,
   &:active:focus {
