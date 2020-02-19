@@ -8,7 +8,7 @@
 <?php $__env->startSection('content'); ?>
   <?php while(have_posts()): ?> <?php the_post() ?>
 
-    <?php if( has_post_thumbnail() ): ?>
+    <?php if( has_post_thumbnail() && get_field('activar_cuenta_atras') != 1 ): ?>
       <div class="post_thumbnail_home">
         <?php the_post_thumbnail('full') ?>
       </div>
